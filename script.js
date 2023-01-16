@@ -4,6 +4,9 @@ var ww = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
 
+let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
+console.log(militaryTime);
+
 var month = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"];
 var day = ["e", "MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"];
 
@@ -16,8 +19,11 @@ function displayLesson(klass) {
                 return("Svenska");
             } else if (militaryTime > 0920 && militaryTime < 0940){
                 return("Rast");
-            } else if (militaryTime > 0940 && militaryTime < 1200){
+            } else if (militaryTime > 0940 && militaryTime < 1040){
                return("Matematik");
+            }
+            else{
+              return(militaryTime)
             }
           } 
        }
