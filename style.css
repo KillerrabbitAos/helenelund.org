@@ -2,23 +2,26 @@
 h2{
   font-family: "Times New Roman", Times, serif;
 }
+
+#clickhere{
+  float: 100px;
+}
+
+
 a{
   color: black;
-  
-}
- 
-  
-
-  
+  width: 25%
 }
 .header {
   font-family: "Times New Roman", Times, serif;
   text-align: center;
-  float: none
   padding: 20px;
   font-size: 40px;
 }
 
+#schemanav{
+  width: calc(100%/3)
+}
 #KauppiSnilleskola{
   float: center;
 }
@@ -26,13 +29,13 @@ a{
   background-color: #111;
   border-radius: 25px;
   border: 2px solid #73AD21;
-  text-align: center;
-  
+  text-align: center; 
+  width: 100%
 }
 
 
 body{
-  background-color: lightblue;
+  background-color: #FAFCF9;
 }
 
 
@@ -46,17 +49,22 @@ p{
   font-family: 'Changa', sans-serif;
   
 }
+
+
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #green;
+  width: 100%
 }
 
 li {
   display: inline-block;
-  float: none;
+  float: left;
+  width: 25%
 }
 
 li a {
@@ -67,12 +75,11 @@ li a {
   padding: 14px 16px;
   font-family: 'Changa', sans-serif;
   text-decoration: none;
+  width: 100%
 }
 
 li a:hover {
   background-color: #green;
 }
-li a:hover {
-  background-color: #green;
-}
+
 

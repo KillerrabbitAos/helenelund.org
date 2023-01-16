@@ -1,13 +1,17 @@
+<!DOCTYPE html>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="script.js">
+   <script type=text/javascript src="script.js"></script>
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
+ 
+
 </head>
 <div class="topnav">
 <ul>
-  <li><a class="active" href="index.html">Home</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="schema.html">Scheman</a></li>
-  <li><a href="richard.html">Richard</a></li>
+  <li id="schemanav"><a class="active" href="index.html">Home</a></li>
+  <li id="schemanav"><a href="contact.html">Contact</a></li>
+  <li id="schemanav"><a href="richard.html">Richard</a></li>
 </ul>
 </div>
 <hr />
@@ -18,6 +22,10 @@
   <h2><ins>Åk 1</ins></h2>
   <h2>1A:</h2>
   <p><a href="Pdf/Schema.pdf">1A Schema</a>.</p>
+<p id="time"></p>
+<script>
+  document.getElementById("time").innerHTML = displayLesson("1A");
+</script>
 
   <h2>1B:</h2>
   <p><a href="Pdf/Schema (1).pdf">1B Schema</a>.</p>
