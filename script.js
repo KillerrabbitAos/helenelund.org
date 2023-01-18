@@ -31,4 +31,3 @@ function displayLesson(klass) {
     return("hej");
   }
     }
-//sammm
