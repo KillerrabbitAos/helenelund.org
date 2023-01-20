@@ -21,6 +21,12 @@ function displayLesson(klass) {
                 return("Rast");
             } else if (militaryTime > 0940 && militaryTime < 1040){
                return("Matematik");
+            } else if (militaryTime > 1040 && militaryTime < 1110){
+              return("Lunch");
+            } else if (militaryTime > 1110 && militaryTime < 1150){
+              return("Rast");
+            } else if (militaryTime > 1040 && militaryTime < 1110){
+              return("Lunch");
             }
             else{
               return(militaryTime)
