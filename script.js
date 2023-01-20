@@ -140,6 +140,9 @@ else{
   return("Helg, börjar igen på måndag klockan 8:00")
 }
 
+}
+else{
+  return("Helg, börjar igen på måndag klockan 8:00")
 }    
 
 }
