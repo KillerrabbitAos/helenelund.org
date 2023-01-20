@@ -31,4 +31,4 @@ function displayLesson(klass) {
     return("hej");
   }
     }
-//hello
+
