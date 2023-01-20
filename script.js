@@ -36,7 +36,9 @@ function displayLesson(klass) {
       else {
         return (militaryTime)
       }
-    }
+    } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
+  }
   }
 }
 
@@ -70,6 +72,8 @@ if (klass == "1A") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 
@@ -103,6 +107,8 @@ if (klass == "1A") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1A") {
@@ -141,6 +147,8 @@ if (klass == "1A") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1A") {
@@ -171,6 +179,8 @@ if (klass == "1A") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1B") {
@@ -197,6 +207,8 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1B") {
@@ -231,6 +243,8 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1B") {
@@ -267,6 +281,8 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1B") {
@@ -303,6 +319,8 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1B") {
@@ -337,6 +355,8 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "1B") {
@@ -367,6 +387,8 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
+  } else {
+    return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
 if (klass == "2A") {
