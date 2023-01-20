@@ -39,10 +39,6 @@ function displayLesson(klass) {
     } else {
     return ("Helg, börjar igen på måndag klockan 8:00")
   }
-  }
-}
-
-if (klass == "1A") {
   if (day[ww] == "TUESDAY") {
 
     if (militaryTime > 0000 && militaryTime < 0800) {
@@ -75,9 +71,7 @@ if (klass == "1A") {
   } else {
     return ("Helg, börjar igen på måndag klockan 8:00")
   }
-}
 
-if (klass == "1A") {
   if (day[ww] == "WEDNESDAY") {
 
     if (militaryTime > 0000 && militaryTime < 0800) {
@@ -110,8 +104,7 @@ if (klass == "1A") {
   } else {
     return ("Helg, börjar igen på måndag klockan 8:00")
   }
-}
-if (klass == "1A") {
+
   if (day[ww] == "THURSDAY") {
 
     if (militaryTime > 0000 && militaryTime < 0800) {
@@ -150,8 +143,7 @@ if (klass == "1A") {
   } else {
     return ("Helg, börjar igen på måndag klockan 8:00")
   }
-}
-if (klass == "1A") {
+
   if (day[ww] == "FRIDAY") {
 
     if (militaryTime > 0000 && militaryTime < 0800) {
@@ -184,12 +176,9 @@ if (klass == "1A") {
   }
 }
 if (klass == "1B") {
-  if (day[ww] == "MONDAY") {
+  if (day[ww] == "MONDAY") {    
 
-    if (militaryTime > 0000 && militaryTime < 0800) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-
-    } else if (militaryTime > 0800 && militaryTime < 0920) {
+    if (militaryTime > 0800 && militaryTime < 0920) {
       return ("Svenska");
     } else if (militaryTime > 0920 && militaryTime < 0940) {
       return ("Rast");
@@ -207,17 +196,12 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
-  } else {
-    return ("Helg, börjar igen på måndag klockan 8:00")
-  }
-}
-if (klass == "1B") {
+  } 
+  
+
   if (day[ww] == "TUESDAY") {
 
-    if (militaryTime > 0000 && militaryTime < 0800) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-
-    } else if (militaryTime > 0800 && militaryTime < 0900) {
+  if (militaryTime > 0800 && militaryTime < 0900) {
       return ("Matematik");
     } else if (militaryTime > 0900 && militaryTime < 0920) {
       return ("Svenska");
@@ -243,17 +227,13 @@ if (klass == "1B") {
     else {
       return (militaryTime)
     }
-  } else {
-    return ("Helg, börjar igen på måndag klockan 8:00")
   }
-}
-if (klass == "1B") {
+ 
   if (day[ww] == "WEDNESDAY") {
 
-    if (militaryTime > 0000 && militaryTime < 0800) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
+    
 
-    } else if (militaryTime > 0800 && militaryTime < 0900) {
+    if (militaryTime > 0800 && militaryTime < 0900) {
       return ("Blockerad tid elever");
     } else if (militaryTime > 0900 && militaryTime < 0910) {
       return ("Rast");
@@ -275,23 +255,16 @@ if (klass == "1B") {
       return ("Rast");
     } else if (militaryTime > 1250 && militaryTime < 1320) {
       return ("EV");
-    } else if (militaryTime > 1320 && militaryTime < 2359) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-    }
+    } 
     else {
-      return (militaryTime)
+      return ("Klassen har slutat. Börjar kl 8:00.")
     }
-  } else {
-    return ("Helg, börjar igen på måndag klockan 8:00")
-  }
-}
-if (klass == "1B") {
+  } 
+
+
   if (day[ww] == "WEDNESDAY") {
 
-    if (militaryTime > 0000 && militaryTime < 0800) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-
-    } else if (militaryTime > 0800 && militaryTime < 0900) {
+    if (militaryTime > 0800 && militaryTime < 0900) {
       return ("Blockerad tid elever");
     } else if (militaryTime > 0900 && militaryTime < 0910) {
       return ("Rast");
@@ -313,23 +286,15 @@ if (klass == "1B") {
       return ("Rast");
     } else if (militaryTime > 1250 && militaryTime < 1320) {
       return ("EV");
-    } else if (militaryTime > 1320 && militaryTime < 2359) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-    }
+    } 
     else {
-      return (militaryTime)
+      return ("Klassen har slutat. Börjar kl 8:00.")
     }
-  } else {
-    return ("Helg, börjar igen på måndag klockan 8:00")
-  }
-}
-if (klass == "1B") {
+  } 
+
   if (day[ww] == "THURSDAY") {
 
-    if (militaryTime > 0000 && militaryTime < 0800) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-
-    } else if (militaryTime > 0800 && militaryTime < 0900) {
+    if (militaryTime > 0800 && militaryTime < 0900) {
       return ("Matematik");
     } else if (militaryTime > 0900 && militaryTime < 0920) {
       return ("SO");
@@ -349,23 +314,14 @@ if (klass == "1B") {
       return ("Rast");
     } else if (militaryTime > 1210 && militaryTime < 1320) {
       return ("Svenska");
-    } else if (militaryTime > 1320 && militaryTime < 2359) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
     }
     else {
-      return (militaryTime)
+      return ("Klassen har slutat. Börjar kl 8:00.")
     }
-  } else {
-    return ("Helg, börjar igen på måndag klockan 8:00")
-  }
-}
-if (klass == "1B") {
+  } 
+
   if (day[ww] == "FRIDAY") {
-
-    if (militaryTime > 0000 && militaryTime < 0800) {
-      return ("Klassen har slutat. Börjar kl 8:00.");
-
-    } else if (militaryTime > 0800 && militaryTime < 0920) {
+    if (militaryTime > 0800 && militaryTime < 0920) {
       return ("Svenska");
     } else if (militaryTime > 0920 && militaryTime < 0940) {
       return ("Rast");
@@ -383,11 +339,12 @@ if (klass == "1B") {
       return ("EV");
     } else if (militaryTime > 1320 && militaryTime < 2359) {
       return ("Klassen har slutat. Börjar kl 8:00.");
+    } else {
+      return ("Klassen har slutat. Börjar klockan 8:00")
     }
-    else {
-      return (militaryTime)
-    }
-  } else {
+  } 
+  
+  else {
     return ("Helg, börjar igen på måndag klockan 8:00")
   }
 }
@@ -522,4 +479,5 @@ if (klass == "2A") {
 }
 else {
   return ("Helg, börjar igen på måndag klockan 8:00")
-}    
+}
+}  
