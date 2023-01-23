@@ -47,17 +47,13 @@ function displayLesson(klass) {
         return "Rast";
       } else if (militaryTime > 1150 && militaryTime < 1310) {
         return "Samhällsorienterande ämnen(SO)";
-      } else if (militaryTime > 1310 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     }
 
     if (day[ww] == "TUESDAY") {
-      if (militaryTime > 0000 && militaryTime < 0800) {
-        return "Klassen har slutat. Börjar kl 8:00.";
-      } else if (militaryTime > 0800 && militaryTime < 0840) {
+      if (militaryTime > 0800 && militaryTime < 0840) {
         return "Matematik/Musik";
       } else if (militaryTime > 0840 && militaryTime < 0920) {
         return "Matematik/Musik";
@@ -75,17 +71,13 @@ function displayLesson(klass) {
         return "Bild";
       } else if (militaryTime > 1315 && militaryTime < 1320) {
         return "Svenska";
-      } else if (militaryTime > 1320 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     }
 
     if (day[ww] == "WEDNESDAY") {
-      if (militaryTime > 0000 && militaryTime < 0800) {
-        return "Klassen har slutat. Börjar kl 8:00.";
-      } else if (militaryTime > 0800 && militaryTime < 0900) {
+        if (militaryTime > 0800 && militaryTime < 0900) {
         return "Blockerad tid elever";
       } else if (militaryTime > 0900 && militaryTime < 0910) {
         return "Rast";
@@ -103,17 +95,13 @@ function displayLesson(klass) {
         return "Rast";
       } else if (militaryTime > 1240 && militaryTime < 1320) {
         return "Idrott och Hälsa";
-      } else if (militaryTime > 1320 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     }
 
     if (day[ww] == "THURSDAY") {
-      if (militaryTime > 0000 && militaryTime < 0800) {
-        return "Klassen har slutat. Börjar kl 8:00.";
-      } else if (militaryTime > 0800 && militaryTime < 0900) {
+        if (militaryTime > 0800 && militaryTime < 0900) {
         return "Matematik";
       } else if (militaryTime > 0900 && militaryTime < 0920) {
         return "Samhällsorienterande ämnen(SO)";
@@ -137,10 +125,8 @@ function displayLesson(klass) {
         return "Rast";
       } else if (militaryTime > 1250 && militaryTime < 1320) {
         return "SVenska";
-      } else if (militaryTime > 1320 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     }
 
@@ -161,10 +147,8 @@ function displayLesson(klass) {
         return "Mentorstid/Olweus";
       } else if (militaryTime > 1230 && militaryTime < 1320) {
         return "EV";
-      } else if (militaryTime > 1320 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     } else {
       return "Helg, börjar igen på måndag klockan 8:00";
@@ -184,10 +168,8 @@ function displayLesson(klass) {
         return "Lunchrast";
       } else if (militaryTime > 1150 && militaryTime < 1310) {
         return "Samhällsorienterande ämnen(SO)O";
-      } else if (militaryTime > 1310 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     }
 
@@ -212,10 +194,8 @@ function displayLesson(klass) {
         return "Musik/Matematik";
       } else if (militaryTime > 1255 && militaryTime < 1320) {
         return "Bild";
-      } else if (militaryTime > 1320 && militaryTime < 2359) {
-        return "Klassen har slutat. Börjar kl 8:00.";
       } else {
-        return militaryTime;
+        return "Klassen har slutat. Börjar kl 8:00.";
       }
     }
 
