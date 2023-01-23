@@ -14,14 +14,14 @@ h2{
 }
 
 .schemanav{
-  width: calc(100%/3)
+background-color:green;
 }
 
-.topnav {
+ .topnav{
   background-color: #111;
   border-radius: 25px;
   text-align: center; 
-  width: 100%
+  width: 100%;
 }
 
 
