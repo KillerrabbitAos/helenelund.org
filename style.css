@@ -70,16 +70,20 @@ li a {
 
   font-family: "roboto";
   text-align: center;
+  
+
 
 }
 #contact  {
-  font-size: 55px;
+  font-size: 35px;
   text-align: center;
   display: block;
   color: black;
   font-family: "Roboto";
+  font-weight: bold;
 }
-h4  {
+h2  {
   text-align: center;
+  font-size: 55px;
 }
 #contact:link  {  text-decoration: none;  }
