@@ -15,6 +15,7 @@ h2{
 
 .active{
 background-color:green;
+  border-radius: 25px;
 }
 
  .topnav{
@@ -63,6 +64,7 @@ li a {
   font-family: 'Changa', sans-serif;
   text-decoration: none;
   width: 100%
+  border-radius: 25px;
 }
 
 .contactH2  {
