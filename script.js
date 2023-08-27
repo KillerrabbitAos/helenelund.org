@@ -6,6 +6,7 @@ var yyyy = today.getFullYear();
 
 let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
+console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
 var month = [
   "JANUARY",
@@ -31,8 +32,11 @@ var day = [
   "SATURDAY",
   "SUNDAY",
 ];
+function displayLesson(){
+  return ""
+}
 
-function displayLesson(klass) {
+function isplayLesson(klass) {
   if (klass == "1A") {
     if (day[ww] == "MONDAY") {
       if (militaryTime > 0800 && militaryTime < 0920) {
