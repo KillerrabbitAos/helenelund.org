@@ -22,6 +22,16 @@
 <h2>Scheman</h2>
   <hr />
   <br />
+  <h2><ins>Favoriter</ins></h2>
+  <h2></h2>
+  <p><a id=favorites href="#"></a></p>
+<p id="clear"></p>
+<script>
+  document.getElementById("favorites").innerHTML = document.cookie;
+  document.getElementById("favorites").href = document.cookie;
+</script>
+<button id="clear" type="button" onclick="clearCookies();">clear</button>
+
   <h2><ins>Åk 1</ins></h2>
   <h2>1A:</h2>
   <p><a href="Pdf/Schema.pdf">1A Schema</a>.</p>
@@ -29,6 +39,7 @@
 <script>
   document.getElementById("lesson1A").innerHTML = displayLesson("1A");
 </script>
+<button id="1A" type="button" onclick="toggleFavorite('Pdf/Schema.pdf');">favorite</button>
 
   <h2>1B:</h2>
   <p><a href="Pdf/Schema (1).pdf">1B Schema</a>.</p>
@@ -36,7 +47,7 @@
   <script>
     document.getElementById("lesson1B").innerHTML = displayLesson("1B");
   </script>
-
+<button type="button" onclick="toggleFavorite('Pdf/Schema (1).pdf')">favorite</button>
   <h2>1C:</h2>
   <p><a href="Pdf/Schema (2).pdf">1C Schema</a>.</p>
   <p id="lesson1C"></p>

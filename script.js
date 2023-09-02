@@ -8,6 +8,11 @@ let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
+function toggleFavorite(pdf) {
+  document.cookie = pdf 
+  
+}
+
 var month = [
   "JANUARY",
   "FEBRUARY",
