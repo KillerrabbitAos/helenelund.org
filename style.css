@@ -67,7 +67,6 @@ li a {
   font-family: 'Changa', sans-serif;
   text-decoration: none;
   width: 100%
-  border-radius: 25px;
 }
 
 .contactH2  {
@@ -88,3 +87,37 @@ li a {
 }
 
 #contact:link  {  text-decoration: none;  }
+
+
+.favourites{
+  height: 400px;
+  font-size: 20px;
+}
+
+.classes div{
+  width: 300px;
+  height: 250px;
+  box-shadow: 1px 1px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.classes div h2{
+  padding-top: 20px;
+}
+
+
+
+.classes div a{
+  width: 50px;
+  height: 30px;
+  background-color: green;
+  padding: 20px;
+  padding-bottom: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.classes img{ 
+  cursor: pointer;
+}
