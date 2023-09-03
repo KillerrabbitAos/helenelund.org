@@ -8,8 +8,10 @@ let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
-function toggleFavorite(pdf) {
-  document.cookie = pdf 
+function toggleFavorite(pdf, klass) {
+  document.cookie = pdf;
+  document.getElementById("favorites").innerHTML = klass;
+  document.getElementById("favorites").href = document.cookie; 
   
 }
 
