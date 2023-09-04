@@ -38,6 +38,10 @@ p{
   font-family: "Changa", sans-serif;
 }
 
+#favorites{
+  font-family: "Changa", sans-serif;
+}
+
 a {
   color: black;
   border-radius: 25px;
@@ -88,7 +92,7 @@ li a {
 }
 
 .favoriteButton{
-  
+  font-family: "Changa", sans-serif;
 }
 
 #contact:link  {  text-decoration: none;  }

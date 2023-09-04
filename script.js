@@ -9,11 +9,29 @@ console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
 function toggleFavorite(pdf, klass) {
-  document.cookie = pdf;
-  document.getElementById("favorites").innerHTML = klass;
-  document.getElementById("favorites").href = document.cookie; 
+  if (document.cookie){
+    document.cookie = document.cookie + "!" + pdf + "," + klass;
+    console.log("orm1")
+  }
+  else{
+    document.cookie = pdf + "," + klass;
+    console.log("orm2")
+  }
   
-}
+  listCookie = document.cookie.split("!")
+  console.log(listCookie)
+    var p = document.createElement('p');
+    var a = document.createElement('a'); 
+    var link = document.createTextNode(klass);
+    a.appendChild(link); 
+    a.href = pdf; 
+    p.appendChild(a)
+    document.getElementById("favorites").appendChild(p);
+  }
+
+  function clearCookies(){
+    document.cookie = 0
+  }
 
 var month = [
   "JANUARY",

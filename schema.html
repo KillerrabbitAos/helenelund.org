@@ -24,13 +24,33 @@
   <br />
   <h2><ins>Favoriter</ins></h2>
   <h2></h2>
-  <p><a id=favorites href="#"></a></p>
-<p id="clear"></p>
+  <div id="favorites">
+  
+  </div>
 <script>
-  document.getElementById("favorites").innerHTML = document.cookie;
-  document.getElementById("favorites").href = document.cookie;
+  listCookie = document.cookie.split("!")
+  console.log(listCookie)
+  if (document.cookie != 0 && document.cookie){ 
+    for (let x of listCookie){
+    y = x.split(",")
+    var p = document.createElement('p')
+    var a = document.createElement('a'); 
+    var link = document.createTextNode(y[1]);
+    a.appendChild(link); 
+    a.href = y[0]; 
+    p.appendChild(a)
+    document.getElementById("favorites").appendChild(p);
+  }
+  }
+  else{
+  var p = document.createElement('p')
+  p.innerHTML = "orm"
+  document.getElementById("favorites").appendChild(p)
+  }
+
+
 </script>
-<button id="clear" type="button" onclick="clearCookies();">clear</button>
+<button id="clear" type="button" onclick="clearCookies(); document.getElementById('favorites').innerHTML = '';">clear</button>
 
   <h2><ins>Åk 1</ins></h2>
   <h2>1A:</h2>
@@ -39,7 +59,7 @@
 <script>
   document.getElementById("lesson1A").innerHTML = displayLesson("1A");
 </script>
-<button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema.pdf')">favorite</button>
+<button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema.pdf', '1A:')">favorite</button>
 
   <h2>1B:</h2>
   <p><a href="Pdf/Schema (1).pdf">1B Schema</a>.</p>
@@ -47,21 +67,21 @@
   <script>
     document.getElementById("lesson1B").innerHTML = displayLesson("1B");
   </script>
-<button class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (1).pdf')">favorite</button>
+<button class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (1).pdf', '1B')">favorite</button>
   <h2>1C:</h2>
   <p><a href="Pdf/Schema (2).pdf">1C Schema</a>.</p>
   <p id="lesson1C"></p>
   <script>
     document.getElementById("lesson1C").innerHTML = displayLesson("1C");
   </script>
-  <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (2).pdf')">favorite</button>
+  <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (2).pdf', '1C')">favorite</button>
   <h2>1D:</h2>
   <p><a href="Pdf/Schema (3).pdf">1C Schema</a>.</p>
   <p id="lesson1D"></p>
 <script>
   document.getElementById("lesson1D").innerHTML = displayLesson("1D");
 </script>
-<button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (3).pdf')">favorite</button>
+<button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (3).pdf', '1D')">favorite</button>
   <hr />
 
   <h2><ins>Åk 2</ins></h2>
@@ -71,14 +91,14 @@
   <script>
     document.getElementById("lesson2A").innerHTML = displayLesson("2A");
   </script>
-  <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (5).pdf')">favorite</button>
+  <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (5).pdf', '2A')">favorite</button>
   <h2>2B:</h2>
   <p><a href="Pdf/Schema (5).pdf">2B Schema</a>.</p>
   <p id="lesson2B"></p>
   <script>
     document.getElementById("lesson2B").innerHTML = displayLesson("2B");
   </script>
-  <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (6).pdf')">favorite</button>
+  <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (6).pdf', '2B')">favorite</button>
   <h2>2C:</h2>
   <p><a href="Pdf/Schema (6).pdf">2C Schema</a>.</p>
   <p id="lesson2C"></p>
