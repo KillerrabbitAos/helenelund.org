@@ -10,12 +10,12 @@ function makeFavourite(className) {
     var favFive = document.getElementById("favFive");
 
     var classDiv = document.getElementsByClassName(className)[0];
-    var starImg = classDiv.getElementsByTagName("img")[0];
+    var img = classDiv.getElementsByTagName("img")[0];
+    var filePath = "Pdf/Schema.pdf";
 
-    if (starImg.src.includes("star2.png")) {
-      // Lägg till som favorit
+    if (img.src.includes("star2.png")) {
       if (favOne.innerHTML === "") {
-        favOne.innerHTML = className;
+        favOne.innerHTML = (className);
       } else if (favTwo.innerHTML === "") {
         favTwo.innerHTML = className;
       } else if (favThree.innerHTML === "") {
@@ -29,9 +29,8 @@ function makeFavourite(className) {
         return;
       }
 
-      starImg.src = "imgs/star1.png";
+      img.src = "imgs/star1.png";
     } else {
-      // Ta bort som favorit
       if (favOne.innerHTML === className) {
         favOne.innerHTML = "";
       } else if (favTwo.innerHTML === className) {
@@ -44,7 +43,7 @@ function makeFavourite(className) {
         favFive.innerHTML = "";
       }
 
-      starImg.src = "imgs/star2.png";
+      img.src = "imgs/star2.png";
     }
 
     favouriteStatus.innerHTML = "Dina favoriter:";
