@@ -3,7 +3,7 @@ var dd = today.getDate();
 var ww = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
-//orm
+
 let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
