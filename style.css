@@ -93,6 +93,7 @@ li a {
 
 .favoriteButton{
   font-family: "Changa", sans-serif;
+  float: right;
 }
 
 #contact:link  {  text-decoration: none;  }

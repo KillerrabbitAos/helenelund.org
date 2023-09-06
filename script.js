@@ -9,17 +9,25 @@ console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
 function toggleFavorite(pdf, klass) {
-  if (document.cookie){
+  listCookie = document.cookie.split("!")
+  let pattern = new RegExp(klass)
+
+  if (document.cookie.match(pattern)){
+    console.log("same")
+  }
+  else if (document.cookie){
     document.cookie = document.cookie + "!" + pdf + "," + klass;
     console.log("orm1")
+    createShortcut = true
   }
   else{
     document.cookie = pdf + "," + klass;
     console.log("orm2")
+    createShortcut = true
   }
-  
-  listCookie = document.cookie.split("!")
-  console.log(listCookie)
+    if (createShortcut){
+    console.log(listCookie) 
+    
     var p = document.createElement('p');
     var a = document.createElement('a'); 
     var link = document.createTextNode(klass);
@@ -27,6 +35,8 @@ function toggleFavorite(pdf, klass) {
     a.href = pdf; 
     p.appendChild(a)
     document.getElementById("favorites").appendChild(p);
+    createShortcut = false
+    }
   }
 
   function clearCookies(){
