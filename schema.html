@@ -28,29 +28,9 @@
   
   </div>
 <script>
-  listCookie = document.cookie.split("!")
-  console.log(listCookie)
-  if (document.cookie != 0 && document.cookie){ 
-    for (let x of listCookie){
-    y = x.split(",")
-    var p = document.createElement('p')
-    var a = document.createElement('a'); 
-    var link = document.createTextNode(y[1]);
-    a.appendChild(link); 
-    a.href = y[0]; 
-    p.appendChild(a)
-    document.getElementById("favorites").appendChild(p);
-  }
-  }
-  else{
-  var p = document.createElement('p')
-  p.innerHTML = "orm"
-  document.getElementById("favorites").appendChild(p)
-  }
-
-
+  updateFavorites()
 </script>
-<button id="clear" type="button" onclick="clearCookies(); document.getElementById('favorites').innerHTML = '';">clear</button>
+<button id="clear" type="button" onclick="clearFavorites(0); document.getElementById('favorites').innerHTML = ''">clear</button>
 
   <h2><ins>Åk 1</ins></h2>
   <h2>1A:</h2>
@@ -59,7 +39,7 @@
 <script>
   document.getElementById("lesson1A").innerHTML = displayLesson("1A");
 </script>
-<button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema.pdf', '1A:')">favorite</button>
+<button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema.pdf', '1A')">favorite</button>
 
   <h2>1B:</h2>
   <p><a href="Pdf/Schema (1).pdf">1B Schema</a>.</p>
