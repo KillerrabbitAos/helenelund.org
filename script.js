@@ -98,7 +98,7 @@ function toggleFavorite(pdf, klass) {
       }
   function clearFavorites(p){
     document.cookie = p
-    updateFavorites
+    updateFavorites()
   }
 
 var month = [
