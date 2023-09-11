@@ -71,7 +71,6 @@ li a {
   font-family: 'Changa', sans-serif;
   text-decoration: none;
   width: 100%
-  border-radius: 25px;
 }
 
 .contactH2  {
@@ -94,6 +93,8 @@ li a {
 .favoriteButton{
   font-family: "Changa", sans-serif;
   float: right;
+  margin-right: 70px;
+  font-weight: bold;
 }
 
 #contact:link  {  text-decoration: none;  }
