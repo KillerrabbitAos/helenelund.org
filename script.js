@@ -99,7 +99,7 @@ function toggleFavorite(pdf, klass) {
       
       }
   function clearFavorites(p){
-    document.cookie = p
+    document.cookie = 0
     updateFavorites()
   }
 
