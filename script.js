@@ -9,31 +9,34 @@ console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
 function createShortcut(pdf, klass) {
-  console.log(listCookie); 
+  console.log(listCookie);
   console.log(document.cookie)
   var p = document.createElement('p');
   var a = document.createElement('a'); 
   var link = document.createTextNode(klass);
   a.appendChild(link); 
+  p.id = "favorite" + klass;
   a.href = pdf; 
   p.appendChild(a)
   document.getElementById("favorites").appendChild(p);
   }
   
 function updateFavorites() {
-  document.cookie = 0
-  listCookie = document.cookie.split("!")
-  console.log(listCookie)
-  if (document.cookie){ 
+
+  if (document.cookie != 0){ 
+    listCookie = document.cookie.split("!")
     for (let x of listCookie){
     y = x.split(",")
     createShortcut(y[0], y[1])
+    console.log("lapis")
   }
+  console.log("lapis2")
   }
   else{
   var p = document.createElement('p')
-  p.innerHTML = "orm"
+  p.innerHTML = "Du har inga favoriter än, tryck på favorite för att skapa en."
   document.getElementById("favorites").appendChild(p)
+  console.log("o")
   }
 
 
@@ -45,6 +48,8 @@ function toggleFavorite(pdf, klass) {
 
   if (document.cookie.match(pattern)){
     console.log("same")
+    var element = document.getElementById("favorite" + klass)
+    document.getElementById("favorites").removeChild(element)
     removeCookie(pattern)
   }
 
@@ -54,9 +59,10 @@ function toggleFavorite(pdf, klass) {
     createShortcut(pdf, klass)
   }
   else{
-    document.cookie = ""
     document.cookie = pdf + "," + klass;
     console.log("orm2")
+    console.log(pdf + klass + "e")
+    console.log(document.cookie)
     createShortcut(pdf, klass)
   }
     
@@ -67,28 +73,23 @@ function toggleFavorite(pdf, klass) {
       console.log(pattern)
       listCookie = document.cookie.split("!")
       lastCookie = document.cookie
-      document.cookie = "0;"
+      document.cookie = "0"
       console.log(document.cookie + "e")
       for (let x of listCookie){
         console.log(document.cookie)
         console.log(x)
         y = x.split(",")
-        if (lastCookie.match(pattern)){
+        if (y[1].match(pattern)){
           console.log("same")
           
         }
-        else if (document.cookie){
-          document.cookie = document.cookie + "!" + y[0] + "," + y[1];
-          console.log("orm1")
-         
-        }
+   
         else{
           document.cookie = y[0] + "," + y[1];
           console.log("orm2")
           
           }
         }
-      updateFavorites()
       }
   function clearFavorites(p){
     document.cookie = p
