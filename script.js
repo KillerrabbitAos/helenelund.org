@@ -9,6 +9,7 @@ console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
 function createShortcut(pdf, klass) {
+  
   console.log(listCookie);
   console.log(document.cookie)
   var p = document.createElement('p');
@@ -19,6 +20,7 @@ function createShortcut(pdf, klass) {
   a.href = pdf; 
   p.appendChild(a)
   document.getElementById("favorites").appendChild(p);
+  document.getElementById("favorites").removeChild(document.getElementById("ingaFavoriter"))
   }
   
 function updateFavorites() {
@@ -34,6 +36,7 @@ function updateFavorites() {
   }
   else{
   var p = document.createElement('p')
+  p.id = "ingaFavoriter"
   p.innerHTML = "Du har inga favoriter än, tryck på favorite för att skapa en."
   document.getElementById("favorites").appendChild(p)
   console.log("o")
@@ -51,6 +54,8 @@ function toggleFavorite(pdf, klass) {
     var element = document.getElementById("favorite" + klass)
     document.getElementById("favorites").removeChild(element)
     removeCookie(pattern)
+    updateFavorites()
+  
   }
 
   else if (document.cookie && document.cookie != 0){
@@ -93,6 +98,7 @@ function toggleFavorite(pdf, klass) {
       }
   function clearFavorites(p){
     document.cookie = p
+    updateFavorites
   }
 
 var month = [
