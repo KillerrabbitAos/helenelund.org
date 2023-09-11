@@ -20,11 +20,11 @@ function createShortcut(pdf, klass) {
   a.href = pdf; 
   p.appendChild(a)
   document.getElementById("favorites").appendChild(p);
-  document.getElementById("favorites").removeChild(document.getElementById("ingaFavoriter"))
+  
   }
   
 function updateFavorites() {
-
+  document.getElementById("favorites").innerHTML = ""
   if (document.cookie != 0){ 
     listCookie = document.cookie.split("!")
     for (let x of listCookie){
@@ -69,6 +69,7 @@ function toggleFavorite(pdf, klass) {
     console.log(pdf + klass + "e")
     console.log(document.cookie)
     createShortcut(pdf, klass)
+    document.getElementById("favorites").removeChild(document.getElementById("ingaFavoriter"))
   }
     
   
@@ -95,6 +96,7 @@ function toggleFavorite(pdf, klass) {
           
           }
         }
+      
       }
   function clearFavorites(p){
     document.cookie = p
