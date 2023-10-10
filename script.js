@@ -4,6 +4,16 @@ var ww = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
 
+function createCookie(value) {
+    var expiration_date = new Date();
+    var cookie_string = '';
+    expiration_date.setFullYear(expiration_date.getFullYear() + 1);
+
+    cookie_string = "test_cookies=" + "value" + "; path=/; expires=" + expiration_date.toUTCString();
+    
+    document.cookie = cookie_string;
+}
+
 let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
