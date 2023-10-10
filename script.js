@@ -38,8 +38,8 @@ function createShortcut(pdf, klass) {
   
 function updateFavorites() {
   document.getElementById("favorites").innerHTML = ""
-  if (document.cookie != 0){ 
-    listCookie = document.cookie.split("!")
+  if (getCookieValue() != 0){ 
+    listCookie = getCookieValue().split("!")
     for (let x of listCookie){
     y = x.split(",")
     createShortcut(y[0], y[1])
@@ -59,10 +59,10 @@ function updateFavorites() {
 }
 
 function toggleFavorite(pdf, klass) {
-  listCookie = document.cookie.split("!")
+  listCookie = getCookieValue().split("!")
   let pattern = new RegExp(klass)
 
-  if (document.cookie.match(pattern)){
+  if (getCookieValue().match(pattern)){
     console.log("same")
     var element = document.getElementById("favorite" + klass)
     document.getElementById("favorites").removeChild(element)
@@ -71,13 +71,13 @@ function toggleFavorite(pdf, klass) {
   
   }
 
-  else if (document.cookie && document.cookie != 0){
-    document.cookie = document.cookie + "!" + pdf + "," + klass;
+  else if (getCookieValue() && getCookieValue() != 0){
+    createCookie(getCookieValue() + "!" + pdf + "," + klass);
     console.log("orm1")
     createShortcut(pdf, klass)
   }
   else{
-    document.cookie = pdf + "," + klass;
+    createCookie(pdf + "," + klass);
     console.log("orm2")
     console.log(pdf + klass + "e")
     console.log(document.cookie)
@@ -90,9 +90,9 @@ function toggleFavorite(pdf, klass) {
   
     function removeCookie(pattern){
       console.log(pattern)
-      listCookie = document.cookie.split("!")
-      lastCookie = document.cookie
-      document.cookie = "0"
+      listCookie = getCookieValue().split("!")
+      lastCookie = getCookieValue()
+      createCookie("")
       console.log(document.cookie + "e")
       for (let x of listCookie){
         console.log(document.cookie)
@@ -112,7 +112,7 @@ function toggleFavorite(pdf, klass) {
       
       }
   function clearFavorites(p){
-    document.cookie = 0
+    createCookie("")
     updateFavorites()
   }
 
