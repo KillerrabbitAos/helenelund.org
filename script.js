@@ -9,7 +9,7 @@ function createCookie(value) {
     var cookie_string = '';
     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
 
-    cookie_string = "cookieValue=" + "orm" + value + "orm" + "; expires=" + expiration_date.toUTCString();
+    cookie_string = "cookieValue=" + "orm" + (value) + "orm" + "; expires=" + expiration_date.toUTCString();
     
     document.cookie = cookie_string;
 }
