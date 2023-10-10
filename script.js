@@ -3,7 +3,12 @@ var dd = today.getDate();
 var ww = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
-clearFavorites(0)
+if document.cookie{
+    console.log("e");
+}
+else {
+    document.cookie = 0;
+}
 function createCookie(value) {
     var expiration_date = new Date();
     var cookie_string = '';
