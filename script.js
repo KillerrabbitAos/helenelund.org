@@ -17,6 +17,7 @@ function createCookie(value) {
 function getCookieValue() {
     return document.cookie.split("orm")[1]
 }
+console.log(getCookieValue())
 let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
