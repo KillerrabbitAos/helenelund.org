@@ -3,19 +3,19 @@ var dd = today.getDate();
 var ww = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
-
+clearFavorites(0)
 function createCookie(value) {
     var expiration_date = new Date();
     var cookie_string = '';
     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
 
-    cookie_string = "cookieValue=" + "orm" + (value) + "orm" + "; expires=" + expiration_date.toUTCString();
+    cookie_string = "cookieValue=" + "orm " + (value) + " orm" + "; expires=" + expiration_date.toUTCString();
     
     document.cookie = cookie_string;
 }
 
 function getCookieValue() {
-    return toString(document.cookie.split("orm")[1])
+    return (toString(document.cookie.split("orm")[1])).split(" ")[1]
     console.log(document.cookie.split("orm")[1])
 }
 console.log(getCookieValue())
