@@ -113,7 +113,7 @@ function toggleFavorite(pdf, klass) {
       
       }
   function clearFavorites(p){
-    createCookie("")
+    createCookie(0)
     updateFavorites()
   }
 
