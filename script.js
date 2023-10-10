@@ -9,11 +9,14 @@ function createCookie(value) {
     var cookie_string = '';
     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
 
-    cookie_string = "test_cookies=" + "value" + "; path=/; expires=" + expiration_date.toUTCString();
+    cookie_string = "cookieValue=" + "orm" + value + "orm" + "; path=/; expires=" + expiration_date.toUTCString();
     
     document.cookie = cookie_string;
 }
 
+function getCookieValue() {
+    return document.cookie.split("orm")[1]
+}
 let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
 console.log(militaryTime);
 console.log("↑ Den aktuella tiden om du undrar, annars inte.")
