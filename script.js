@@ -3,6 +3,7 @@ var dd = today.getDate();
 var ww = today.getDay();
 var mm = today.getMonth();
 var yyyy = today.getFullYear();
+console.log("document.cookie")
 if document.cookie{
     console.log("e");
 }
