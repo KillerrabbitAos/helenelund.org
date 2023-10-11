@@ -15,14 +15,14 @@ function createCookie(value) {
     var cookie_string = '';
     expiration_date.setFullYear(expiration_date.getFullYear() + 1);
 
-    cookie_string = "cookieValue=" + "orm " + (value) + " orm" + "; expires=" + expiration_date.toUTCString();
+    cookie_string = "cookieValue=" + (value) + "; expires=" + expiration_date.toUTCString();
     
     document.cookie = cookie_string;
 }
 
 function getCookieValue() {
-    return document.cookie.split("orm")[1].split(" ")[1]
-    console.log(document.cookie.split("orm")[1]).split(" ")[1]
+    return document.cookie.split("=")[1];
+    console.log(document.cookie.split("=")[1]);
 }
 console.log(getCookieValue())
 let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
