@@ -21,7 +21,7 @@ function createCookie(value) {
 }
 
 function getCookieValue() {
-    return (toString(document.cookie.split("orm")[1])).split(" ")[1]
+    return toString((toString(document.cookie.split("orm")[1])).split(" ")[1])
     console.log(document.cookie.split("orm")[1])
 }
 console.log(getCookieValue())
