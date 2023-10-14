@@ -39,7 +39,7 @@ function updateFavorites() {
   else{
   var p = document.createElement('p')
   p.id = "ingaFavoriter"
-  p.innerHTML = "Du har inga favoriter än, tryck på favorite för att skapa en."
+  p.innerHTML = 'Du har inga favoriter än, tryck på "Favorit" för att skapa en.'
   document.getElementById("favorites").appendChild(p)
   console.log("o")
   }
@@ -137,6 +137,3 @@ var day = [
 function displayLesson(){
   return ""
 }
-
-
-//test
