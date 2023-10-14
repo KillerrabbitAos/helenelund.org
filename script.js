@@ -1,33 +1,7 @@
-var today = new Date();
-var dd = today.getDate();
-var ww = today.getDay();
-var mm = today.getMonth();
-var yyyy = today.getFullYear();
-console.log(document.cookie)
-if document.cookie{
-    console.log("e");
-}
-else {
-    document.cookie = 0;
-}
-function createCookie(value) {
-    var expiration_date = new Date();
-    var cookie_string = '';
-    expiration_date.setFullYear(expiration_date.getFullYear() + 1);
 
-    cookie_string = "cookieValue=" + (value) + "; expires=" + expiration_date.toUTCString();
-    
-    document.cookie = cookie_string;
+function getCookie(){
+  return document.cookie.split("=")[1];
 }
-
-function getCookieValue() {
-    return document.cookie.split("=")[1];
-    console.log(document.cookie.split("=")[1]);
-}
-console.log(getCookieValue())
-let militaryTime = new Date().getHours() * 100 + new Date().getMinutes();
-console.log(militaryTime);
-console.log("↑ Den aktuella tiden om du undrar, annars inte.")
 
 function createShortcut(pdf, klass) {
   
@@ -43,11 +17,20 @@ function createShortcut(pdf, klass) {
   document.getElementById("favorites").appendChild(p);
   
   }
+  function setCookie(value) { 
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 365 * 86400000;
+    now.setTime(expireTime);
+    console.log(time)
+    document.cookie = 'cookie='+value+';expires='+now.toUTCString()+';path=/';
+    console.log(document.cookie);
+  }
   
 function updateFavorites() {
   document.getElementById("favorites").innerHTML = ""
-  if (getCookieValue() != 0){ 
-    listCookie = getCookieValue().split("!")
+  if (getCookie() != 0){ 
+    listCookie = getCookie().split("!");
     for (let x of listCookie){
     y = x.split(",")
     createShortcut(y[0], y[1])
@@ -58,7 +41,7 @@ function updateFavorites() {
   else{
   var p = document.createElement('p')
   p.id = "ingaFavoriter"
-  p.innerHTML = 'Du har inga favoriter än, tryck på "Favorit" för att skapa en.'
+  p.innerHTML = "Du har inga favoriter än, tryck på favorite för att skapa en."
   document.getElementById("favorites").appendChild(p)
   console.log("o")
   }
@@ -67,10 +50,10 @@ function updateFavorites() {
 }
 
 function toggleFavorite(pdf, klass) {
-  listCookie = getCookieValue().split("!")
+  listCookie = document.cookie.split("!")
   let pattern = new RegExp(klass)
 
-  if (getCookieValue().match(pattern)){
+  if (document.cookie.match(pattern)){
     console.log("same")
     var element = document.getElementById("favorite" + klass)
     document.getElementById("favorites").removeChild(element)
@@ -79,13 +62,13 @@ function toggleFavorite(pdf, klass) {
   
   }
 
-  else if (getCookieValue() && getCookieValue() != 0){
-    createCookie(getCookieValue() + "!" + pdf + "," + klass);
+  else if (getCookie() && getCookie() != 0){
+    setCookie(getCookie() + "!" + pdf + "," + klass);
     console.log("orm1")
     createShortcut(pdf, klass)
   }
   else{
-    createCookie(pdf + "," + klass);
+    setCookie(pdf + "," + klass);
     console.log("orm2")
     console.log(pdf + klass + "e")
     console.log(document.cookie)
@@ -98,9 +81,9 @@ function toggleFavorite(pdf, klass) {
   
     function removeCookie(pattern){
       console.log(pattern)
-      listCookie = getCookieValue().split("!")
-      lastCookie = getCookieValue()
-      createCookie("")
+      listCookie = getCookie().split("!")
+      lastCookie = getCookie()
+      setCookie(0)
       console.log(document.cookie + "e")
       for (let x of listCookie){
         console.log(document.cookie)
@@ -112,7 +95,7 @@ function toggleFavorite(pdf, klass) {
         }
    
         else{
-          document.cookie = y[0] + "," + y[1];
+          setCookie(y[0] + "," + y[1]);
           console.log("orm2")
           
           }
@@ -120,7 +103,7 @@ function toggleFavorite(pdf, klass) {
       
       }
   function clearFavorites(p){
-    createCookie(0)
+    setCookie(0)
     updateFavorites()
   }
 
