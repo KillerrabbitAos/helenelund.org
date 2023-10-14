@@ -1,3 +1,2 @@
 # helenelund.org
 ormm
-kines
