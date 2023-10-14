@@ -27,7 +27,7 @@ function createShortcut(pdf, klass) {
   
 function updateFavorites() {
   document.getElementById("favorites").innerHTML = ""
-  if (getCookie() != 0){ 
+  if (getCookie() != 0 && document.cookie){ 
     listCookie = getCookie().split("!");
     for (let x of listCookie){
     y = x.split(",")
