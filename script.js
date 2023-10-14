@@ -5,8 +5,6 @@ function getCookie(){
 
 function createShortcut(pdf, klass) {
   
-  console.log(listCookie);
-  console.log(document.cookie)
   var p = document.createElement('p');
   var a = document.createElement('a'); 
   var link = document.createTextNode(klass);
@@ -50,7 +48,6 @@ function updateFavorites() {
 }
 
 function toggleFavorite(pdf, klass) {
-  listCookie = document.cookie.split("!")
   let pattern = new RegExp(klass)
 
   if (document.cookie.match(pattern)){
@@ -81,11 +78,12 @@ function toggleFavorite(pdf, klass) {
   
     function removeCookie(pattern){
       console.log(pattern)
-      listCookie = getCookie().split("!")
+      listCookie2 = getCookie().split("!")
       lastCookie = getCookie()
-      setCookie(0)
+      setCookie('0')
       console.log(document.cookie + "e")
-      for (let x of listCookie){
+      var newCookie = "";
+      for (let x of listCookie2){
         console.log(document.cookie)
         console.log(x)
         y = x.split(",")
@@ -95,11 +93,16 @@ function toggleFavorite(pdf, klass) {
         }
    
         else{
-          setCookie(y[0] + "," + y[1]);
+          if (newCookie){
+          newCookie = (newCookie + "!" + y[0] + "," + y[1]);
           console.log("orm2")
-          
+          }
+        else{
+          newCookie = (y[0] + "," + y[1]);
+        }
           }
         }
+      setCookie(newCookie)
       
       }
   function clearFavorites(p){
