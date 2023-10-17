@@ -1,5 +1,5 @@
 var tpw = document.getElementById("TPW");
-tpw.style.color = "green";
+tpw.style.background_color = "green";
 function getCookie(){
   return document.cookie.split("=")[1];
 }
