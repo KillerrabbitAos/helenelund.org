@@ -1,4 +1,4 @@
-
+document.getElementById("TPW").style.color = "green";
 function getCookie(){
   return document.cookie.split("=")[1];
 }
