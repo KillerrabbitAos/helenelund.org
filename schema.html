@@ -21,18 +21,19 @@
 
   gtag('config', 'G-KZT42Q867Q');
 </script>
+
 </head>
+
 <div class="topnav">
-<ul>
-  <li class="active"><a href="schema.html">Scheman</a></li>
-  <li><a href="/">Home</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li><a href="games.html">Spel</a></li>
-  
-  
-</ul>
-</div>
-<hr />
+  <ul>
+    <li class="active"><a href="schema.html">Scheman</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="games.html">Spel</a></li>
+    
+    
+  </ul>
+  </div>
 
 <hr>
 <h2>Helenelundsskolan scheman:</h2>
@@ -143,3 +144,17 @@
 
 
 </shema>
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementsByClassName("topnav")[0];
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  </script>
