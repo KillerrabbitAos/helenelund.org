@@ -2,14 +2,6 @@ h2, h3 {
   font-family: "Changa", Times, serif;
 }
 
-#clickhere {
-  float: 100px;
-}
-
-#KRA {
-  text-align: center;
-}
-
 .header {
   font-family: "Changa", Times, serif;
   text-align: center;
@@ -103,7 +95,22 @@ li a {
 }
 
 .sticky li {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 20;
+  border-bottom-left-radius: 20;
   border-top-right-radius: 0;
+}
+
+.games-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.left-games, .right-games {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-games {
+  align-items: flex-end;
 }

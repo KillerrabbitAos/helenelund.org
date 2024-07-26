@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+<head>
+	<title>Config the Minesweeper</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="en-US" />
+	<meta content="all" name="robots" />
+	<link
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap"
+    rel="stylesheet">
+	<meta name="title" content="" />
+	<meta name="author" content="VincentChen" />
+	<meta name="subject" content="" />
+	<meta name="language" content="en-US" />
+	<meta name="keywords" content="" />
+	<link rel="icon" href="" type="image/x-icon" />
+	<link rel="shortcut icon" href="" type="image/x-icon" /> 
+	<link rel="stylesheet" href="style.css" type="text/css" media="all"  />
+	<script language="JavaScript" type="text/javascript">
+	<!--
+		function CheckConfigAndStart()
+		{
+			var row = Math.abs(document.frmConfig.row_count.value);
+			var col = Math.abs(document.frmConfig.col_count.value);
+			var num = Math.abs(document.frmConfig.mine_num.value);
+			if(row > 50)
+			{
+				alert("För många rader!");
+				document.frmConfig.row_count.value = "50";
+				return false;
+			}
+			if(col > 50)
+			{
+				alert("För många kolumner!");
+				document.frmConfig.col_count.value = "50";
+				return false;
+			}
+			if(row < 8)
+			{
+				alert("För få rader!");
+				document.frmConfig.row_count.value = "8";
+				return false;
+			}
+			if(col < 8)
+			{
+				alert("För få kolumner!");
+				document.frmConfig.col_count.value = "8";
+				return false;
+			}
+			if(num > (row*col/2))
+			{
+				alert("För många minor!");
+				document.frmConfig.mine_num.value = "10";
+				return false;
+			}
+			if(num < 8)
+			{
+				alert("För få minor!");
+				document.frmConfig.mine_num.value = "10";
+				return false;
+			}
+			var urlStr = "minesweeper.html?row=" + row + "\&col=" + col + "\&mine=" + num;
+			//document.all.frmConfig.action = urlStr;
+			//document.all.frmConfig.submit();
+			location.href = urlStr;
+			return true;
+		}
+	//-->
+	</script>
+</head>
+<body>
+<form method="post" action="" name="frmConfig">
+	<h1>Minesweeper</h1>
+<table>
+<tr>
+	<td colspan="2">Anpassa spelet:</td>
+</tr>
+<tr>
+	<td>Antal rader:</td>
+	<td><input type="text" name="row_count" value="8" /></td>
+</tr>
+<tr>
+	<td>Antal kolumner:</td>
+	<td><input type="text" name="col_count" value="8" /></td>
+</tr>
+<tr>
+	<td>Antal minor:</td>
+	<td><input type="text" name="mine_num" value="10" /></td>
+</tr>
+<tr>
+	<td><input type="button" value="Starta spelet!" onclick="return CheckConfigAndStart();" /></td>
+	<td><input type="reset" value="Rensa" /></td>
+</tr>
+
+<img src="/clickhere.gif"></table>
+</form>
+</body>
+</html>

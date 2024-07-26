@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css">
+<html lang="sv">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -11,27 +14,40 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KZT42Q867Q');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KZT42Q867Q');
+  </script>
 </head>
+<body>
+  <div class="topnav">
+    <ul>
+      <li><a href="schema.html">Scheman</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="active"><a href="games.html">Spel</a></li>
+    </ul>
+  </div>
 
-<div class="topnav">
-<ul>
-  <li><a href="schema.html">Scheman</a></li>
-  <li><a href="/">Home</a></li>
-  <li><a href="contact.html">Contact</a></li>
-  <li class="active"><a href="games.html">Spel</a></li>
-</ul>
-</div>
-<hr />
+  <hr />
 
-<a href="https://helenelund.org/ballistic"><h2><u>Ballistic</u></h2></a>
-<!-- <a href="https://helenelund.org/driftboss"><h2><u>Drift Boss</u></h2></a> -->
-<a href="https://helenelund.org/2048"><h2><u>2048</u></h2></a>
-<a href="https://helenelund.org/tetris"><h2><u>Tetris (endast tangentbord)</u></h2></a>
+  <div class="games-container">
+    <div class="left-games">
+      <a href="https://helenelund.org/ballistic"><h2><u>Ballistic</u></h2></a>
+      <a href="https://helenelund.org/2048"><h2><u>2048</u></h2></a>
+      <a href="https://helenelund.org/tetris"><h2><u>Tetris (endast tangentbord)</u></h2></a>
+    </div>
+    <div class="right-games">
+      <a href="/minesweeper/"><h2><u>Minesweeper</u></h2></a>
+      <a href="/bubbleshooter/"><h2><u>Bubble Shooter</u></h2></a>
+      
+    </div>
+  </div>
+
+
+  <p>Skicka <a href="/contact.html">gärna in</a> förslag på spel som du vill ska finnas här i framtiden!</p>
+</body>
+</html>
