@@ -468,140 +468,419 @@ function CheckGameStatus()
 }
 
 //Mine object
-function MineButton(mine_value, mine_index) {
-    var oMine = document.createElement("div");
-    var temp_value; // value under current block
-    var oBomb, oFlag; // object of "mine" and "mine flag"
-    var source; // click source
-    var expanded, marked, detected; // expanded, marked as mine, guess as a mine
-    var touchTimer; // timer for detecting long touch
+function MineButton(mine_value,mine_index)
+{
+	var oMine = document.createElement("div");
+	var temp_value;		//value under current block
+	var oBomb,oFlag;	//object of "mine" and "mine flag"
+	var source;		//click source
+	var expanded,marked,detected;	//expanded, mared as mine, guess as a mine
+	oMine.id = "mine_" + mine_index;
+	oMine.className = "mine_up";
+	oMine.style.width = "18px";
+	oMine.style.height = "18px";
+	oMine.setAttribute("mine_value",mine_value);
+	oMine.setAttribute("mine_index",mine_index);
+	
+	//set wether it is marked as a mine
+	oMine.setAttribute("marked",false);
+	
+	//if this is a mine, then set whether it is expanded as exploded 
+	oMine.setAttribute("opened",false);	
+	
+	//set whether it is expanded
+	oMine.setAttribute("expanded",false);
+	
+	//set whether mouse button is pushed
+	oMine.setAttribute("pushed", false);
+	
+	//set whether the guess flag is set
+	oMine.setAttribute("detected", false);
 
-    oMine.id = "mine_" + mine_index;
-    oMine.className = "mine_up";
-    oMine.style.width = "18px";
-    oMine.style.height = "18px";
-    oMine.setAttribute("mine_value", mine_value);
-    oMine.setAttribute("mine_index", mine_index);
+	//oMine.innerText = mine_value;
 
-    // set whether it is marked as a mine
-    oMine.setAttribute("marked", false);
+	//left mouse button response to onmouseup event, right mouse button response to onmousedown event
+	with(oMine)
+	{
+		//change the visual style
+		onmousedown = function()
+		{
+			//if game already over then do nothing
+			if(is_end)
+				return false;
+			//left mouse button
+			if(event.button === 0)
+			{
+				//don't response to "expanded" and "marked" case
+				if(this.getAttribute("marked") === K_TRUE || this.getAttribute("expanded") === K_TRUE)
+				{
+					return false;
+				}
+				this.setAttribute("pushed", true);
+				this.className = "mine_down";
+			}
+			//right mouse button
+			if(event.button === 2)
+			{
+				//start timer
+				BeginTimer();
 
-    // if this is a mine, then set whether it is expanded as exploded 
-    oMine.setAttribute("opened", false); 
+				//check whether it is expanded
+				expanded = this.getAttribute("expanded");
+				if(expanded === K_FALSE)
+				{
+					detected = this.getAttribute("detected");
+					marked = this.getAttribute("marked");
+					this.className = "mine_up";
+					if(marked === K_FALSE) 
+					{
+						if(detected === K_TRUE)
+						{
+							this.setAttribute("detected", false);
+							this.innerText = "";
+							return false;
+						}
+						
+						//mark as a mine
+						oFlag = document.createElement("img");
+						oFlag.style.width = "15px";
+						oFlag.style.height = "15px";
+						oFlag.style.padding = "0px";
+						oFlag.style.margin = "0px";
+						oFlag.src = "images/flag.gif";
+						//avoid recreate
+						this.appendChild(oFlag);
+						this.setAttribute("marked", true);	
 
-    // set whether it is expanded
-    oMine.setAttribute("expanded", false);
+						//update remaining mine count
+						rest_mine--;
+						/*
+						//do not display negative mine count
+						if(rest_mine < 0)
+						{
+							rest_mine = 0;
+						}
+						*/
+						oLeftBox.innerText = rest_mine.toString();
 
-    // set whether mouse button is pushed
-    oMine.setAttribute("pushed", false);
+						CheckGameStatus();
+					}
+					else
+					{
+						//set guess flag
+						rest_mine++;
+						oLeftBox.innerText = rest_mine.toString();
+						//clear the mark
+						this.removeChild(this.firstChild);
+						this.setAttribute("marked", false);
+						
+						if(detected === K_FALSE)
+						{	
+							this.setAttribute("detected", true);
+							this.innerText = "?";
+							this.className = "mine_up";
+						}
+						else
+						{
+							this.setAttribute("detected", false);
+						}
+					}
+				}
+			}
+			
+			//middle mouse button, onmousedown only change the visual style of the blocks,
+			//in onmouseup the real action is taken.
+			if(event.button === 1)
+			{
+				//detect the surrounding blocks
+				//alert("detecting");
+				if(this.getAttribute("expanded") === K_FALSE && this.getAttribute("marked") === K_FALSE)
+				{
+					this.className = "mine_down";
+				}
+				//avoid left mouse button interfere 
+				this.setAttribute("pushed", false);
+				this.setAttribute("detecting", true);
+				//change visual style of the surrounding blocks
+				var cur_index = parseInt(oMine.getAttribute("mine_index"), 10);
+				var cur_y = cur_index % col_count;
+				var cur_x = Math.round((cur_index - cur_y) / col_count);
+				
+				var temp_x, temp_y, temp_index, curMine;
+				for(var i = -1; i <= 1; i++)
+				{
+					temp_x = cur_x + i;
+					if(temp_x < 0 || temp_x > (row_count - 1))
+					{
+						continue;
+					}
+					for(var j = -1; j <= 1; j++)
+					{
+						temp_y = cur_y + j;
+						if(temp_y > (col_count - 1) || temp_y < 0)
+						{
+							continue;
+						}
+						temp_index = temp_x * col_count + temp_y;
+						curMine = document.getElementById("mine_" + temp_index);
+						if(curMine != null && curMine.getAttribute("marked") === K_FALSE && curMine.getAttribute("expanded") === K_FALSE && curMine.getAttribute("detected") === K_FALSE)
+						{
+							curMine.className = "mine_down";
+						}
+					}
+				}
+			}
+		}
+		
+		onmouseout = function()
+		{
+			if(is_end)
+				return false;
 
-    // set whether the guess flag is set
-    oMine.setAttribute("detected", false);
+			if(this.getAttribute("pushed") === K_TRUE)
+			{
+				this.className = "mine_up";
+				this.setAttribute("pushed", false);
+			}
+			
+			if(this.getAttribute("detecting") === K_TRUE)
+			{
+				if(oMine.getAttribute("expanded") === K_FALSE && this.getAttribute("marked") === K_FALSE)
+				{
+					this.className = "mine_up";
+				}
+				this.setAttribute("detecting", false);
+				//restore the visual style of the surrounding blocks
+				var cur_index = parseInt(oMine.getAttribute("mine_index"), 10);
+				var cur_y = cur_index % col_count;
+				var cur_x = Math.round((cur_index - cur_y) / col_count);
+				var i, j;
+				var temp_x, temp_y, temp_index, curMine;
+				for(i = -1; i <= 1; i++)
+				{
+					temp_x = cur_x + i;
+					if(temp_x < 0 || temp_x > (row_count - 1))
+					{
+						continue;
+					}
+					for(j = -1; j <= 1; j++)
+					{
+						temp_y = cur_y + j;
+						if(temp_y > (col_count - 1) || temp_y < 0)
+						{
+							continue;
+						}
+						temp_index = temp_x * col_count + temp_y;
+						curMine = document.getElementById("mine_" + temp_index);
+						if(curMine != null && curMine.getAttribute("marked") === K_FALSE && curMine.getAttribute("expanded") === K_FALSE)
+						{
+							curMine.className = "mine_up";
+						}
+					}
+				}
+			}
+		}
+		
+		onmouseup = function()
+		{
+			if(is_end)
+				return false;
+			
+			//is detecting on going?
+			if(this.getAttribute("detecting") === K_TRUE)
+			{
+				if(this.getAttribute("expanded") === K_FALSE && this.getAttribute("marked") === K_FALSE)
+				{
+					this.className = "mine_up";
+				}
+				this.setAttribute("detecting", false);
+				
+				//if surrounding mark doesn't match the number, restore the visual style
+				var cur_index = parseInt(oMine.getAttribute("mine_index"), 10);
+				var cur_y = cur_index % col_count;
+				var cur_x = Math.round((cur_index - cur_y) / col_count);
+				var i, j;
+				var marked_count = 0;
 
-    // oMine.innerText = mine_value;
+				if(oMine.getAttribute("expanded") === K_TRUE)
+				{
+					for(i = -1; i <= 1; i++)
+					{
+						temp_x = cur_x + i;
+						if(temp_x < 0 || temp_x > (row_count - 1))
+						{
+							continue;
+						}
+						for(j = -1; j <= 1; j++)
+						{
+							temp_y = cur_y + j;
+							if(temp_y > (col_count - 1) || temp_y < 0)
+							{
+								continue;
+							}
+							temp_index = temp_x * col_count + temp_y;
+							curMine = document.getElementById("mine_" + temp_index);
+							if(curMine != null && curMine.getAttribute("marked") === K_TRUE)
+							{
+								marked_count++;
+							}
+						}
+					}
 
-    function markAsMine() {
-        if (oMine.getAttribute("expanded") === "false") {
-            detected = oMine.getAttribute("detected");
-            marked = oMine.getAttribute("marked");
-            oMine.className = "mine_up";
-            if (marked === "false") {
-                if (detected === "true") {
-                    oMine.setAttribute("detected", false);
-                    oMine.innerText = "";
-                    return false;
-                }
+					if(marked_count == parseInt(oMine.getAttribute("mine_value"), 10))
+					{
+						//expand the unexpanded blocks
+						for(i = -1; i <= 1; i++)
+						{
+							temp_x = cur_x + i;
+							if(temp_x < 0 || temp_x > (row_count - 1))
+							{
+								continue;
+							}
+							for(j = -1; j <= 1; j++)
+							{
+								temp_y = cur_y + j;
+								if(temp_y > (col_count - 1) || temp_y < 0)
+								{
+									continue;
+								}
+								temp_index = temp_x * col_count + temp_y;
+								curMine = document.getElementById("mine_" + temp_index);
+								if(curMine != null && curMine.getAttribute("marked") === K_FALSE && curMine.getAttribute("expanded") === K_FALSE)
+								{
+									curMine.setAttribute("pushed", true);
+									curMine.expandCover();
+								}
+							}
+						}
+						return false;
+					}
+				}
 
-                // mark as a mine
-                oFlag = document.createElement("img");
-                oFlag.style.width = "15px";
-                oFlag.style.height = "15px";
-                oFlag.style.padding = "0px";
-                oFlag.style.margin = "0px";
-                oFlag.src = "images/flag.gif";
-                // avoid recreate
-                oMine.appendChild(oFlag);
-                oMine.setAttribute("marked", true);
+				for(i = -1; i <= 1; i++)
+				{
+					temp_x = cur_x + i;
+					if(temp_x < 0 || temp_x > (row_count - 1))
+					{
+						continue;
+					}
+					for(j = -1; j <= 1; j++)
+					{
+						temp_y = cur_y + j;
+						if(temp_y > (col_count -1) || temp_y < 0)
+						{
+							continue;
+						}
+						temp_index = temp_x * col_count + temp_y;
+						curMine = document.getElementById("mine_" + temp_index);
+						if(curMine != null && curMine.getAttribute("marked") === K_FALSE && curMine.getAttribute("expanded") === K_FALSE)
+						{
+							curMine.className = "mine_up";
+						}
+					}
+				}
+				return false;
+			}
+			
+			// left button mouse
+			if(event.button === 0)
+			{
+				this.expandCover();
+			}
+		}
+		
+		oMine.expandCover = function()
+		{
+			if(is_end)
+				return false;
+		
+			//if mouse has moved out, don't do anything
+			if(this.getAttribute("pushed") === K_FALSE)
+			{
+				return false;
+			}
 
-                // update remaining mine count
-                rest_mine--;
-                oLeftBox.innerText = rest_mine.toString();
+			this.setAttribute("pushed", false);
+			
+			//first time click
+			if(!is_first_click)
+			{
+				is_first_click = true;
+				if(this.getAttribute("mine_value") == "9")
+				{
+					//re generate the mine position
+					var cur_index = parseInt(this.getAttribute("mine_index"));
+					var temp_array = InitMineArea(row_count,col_count,mine_count,cur_index);
+					//alert(temp_array);
+					//alert(temp_array[cur_index]);
+					var div_index;
+					var mine_div;
+					for(div_index=0;div_index<(row_count * col_count);div_index++)
+					{
+						mine_div = document.getElementById("mine_" + div_index);
+						mine_div.setAttribute("mine_value",temp_array[div_index]);
+					}
+				}
+			}
+			
+			BeginTimer();
 
-                CheckGameStatus();
-            } else {
-                // set guess flag
-                rest_mine++;
-                oLeftBox.innerText = rest_mine.toString();
-                // clear the mark
-                oMine.removeChild(oMine.firstChild);
-                oMine.setAttribute("marked", false);
+			if(this.getAttribute("marked") === K_TRUE || this.getAttribute("expanded") === K_TRUE) 
+				return false;
+			
+			this.setAttribute("detected", false);
 
-                if (detected === "false") {
-                    oMine.setAttribute("detected", true);
-                    oMine.innerText = "?";
-                    oMine.className = "mine_up";
-                } else {
-                    oMine.setAttribute("detected", false);
-                }
-            }
-        }
-    }
+			temp_value = parseInt(this.getAttribute("mine_value"), 10);
+			switch (temp_value)
+			{
+				//nothing
+				case 0:
+					cur_index = parseInt(this.getAttribute("mine_index"), 10);
+					this.innerText = "";
+					ExpandMineArea(cur_index);
+					break;
+				case 1:this.className = "mine_down_1";this.setAttribute("expanded",true);this.innerText = "1";break;
+				case 2:this.className = "mine_down_2";this.setAttribute("expanded",true);this.innerText = "2";break;
+				case 3:this.className = "mine_down_3";this.setAttribute("expanded",true);this.innerText = "3";break;
+				case 4:this.className = "mine_down_4";this.setAttribute("expanded",true);this.innerText = "4";break;
+				case 5:this.className = "mine_down_5";this.setAttribute("expanded",true);this.innerText = "5";break;
+				case 6:this.className = "mine_down_6";this.setAttribute("expanded",true);this.innerText = "6";break;
+				case 7:this.className = "mine_down_7";this.setAttribute("expanded",true);this.innerText = "7";break;
+				case 8:this.className = "mine_down_8";this.setAttribute("expanded",true);this.innerText = "8";break;
+				//bomb blast
+				case 9:
+				{
+					this.className = "mine_down_bomb_blast";
+					//already expanded
+					this.setAttribute("expanded",true);
+					//check whether exploded
+					if(this.getAttribute("opened") === K_FALSE) 
+					{
+						//avoid recreate
+						if(this.hasChildNodes())
+						{
+							this.removeChild(this.firstChild);
+						}
+						oBomb = document.createElement("img");
+						oBomb.style.width = "15px";
+						oBomb.style.height = "15px";
+						oBomb.style.padding = "0px";
+						oBomb.style.margin = "0px";
+						oBomb.src = "images/bomb.gif";
+						this.appendChild(oBomb);
+						GameOver(1);						
+					}
+					this.setAttribute("opened",true);
+					break;	
+				}
+			}
+			CheckGameStatus();
+		}
+	}
 
-    oMine.onmousedown = function(event) {
-        // if game already over then do nothing
-        if (is_end)
-            return false;
-        // left mouse button
-        if (event.button === 0) {
-            // don't respond to "expanded" and "marked" case
-            if (this.getAttribute("marked") === "true" || this.getAttribute("expanded") === "true") {
-                return false;
-            }
-            this.setAttribute("pushed", true);
-            this.className = "mine_down";
-        }
-        // right mouse button
-        if (event.button === 2) {
-            markAsMine();
-        }
-    }
-
-    oMine.ontouchstart = function(event) {
-        // if game already over then do nothing
-        if (is_end)
-            return false;
-
-        touchTimer = setTimeout(function() {
-            markAsMine();
-        }, 500); // Long press duration (500ms)
-    }
-
-    oMine.ontouchend = function(event) {
-        clearTimeout(touchTimer);
-    }
-
-    oMine.onmouseup = function(event) {
-        if (is_end)
-            return false;
-
-        if (this.getAttribute("pushed") === "true") {
-            this.className = "mine_up";
-            this.setAttribute("pushed", false);
-        }
-    }
-
-    oMine.onmouseout = function() {
-        if (is_end)
-            return false;
-
-        if (this.getAttribute("pushed") === "true") {
-            this.className = "mine_up";
-            this.setAttribute("pushed", false);
-        }
-    }
-
-    return oMine;
+	return oMine;
 }
+
 
 function FunctionBar(mine_num)
 {
