@@ -473,7 +473,7 @@ function MineButton(mine_value, mine_index) {
     var temp_value; // value under current block
     var oBomb, oFlag; // object of "mine" and "mine flag"
     var source; // click source
-    var expanded, marked, detected; // expanded, mared as mine, guess as a mine
+    var expanded, marked, detected; // expanded, marked as mine, guess as a mine
     var touchTimer; // timer for detecting long touch
 
     oMine.id = "mine_" + mine_index;
@@ -501,12 +501,12 @@ function MineButton(mine_value, mine_index) {
     // oMine.innerText = mine_value;
 
     function markAsMine() {
-        if (oMine.getAttribute("expanded") === K_FALSE) {
+        if (oMine.getAttribute("expanded") === "false") {
             detected = oMine.getAttribute("detected");
             marked = oMine.getAttribute("marked");
             oMine.className = "mine_up";
-            if (marked === K_FALSE) {
-                if (detected === K_TRUE) {
+            if (marked === "false") {
+                if (detected === "true") {
                     oMine.setAttribute("detected", false);
                     oMine.innerText = "";
                     return false;
@@ -536,7 +536,7 @@ function MineButton(mine_value, mine_index) {
                 oMine.removeChild(oMine.firstChild);
                 oMine.setAttribute("marked", false);
 
-                if (detected === K_FALSE) {
+                if (detected === "false") {
                     oMine.setAttribute("detected", true);
                     oMine.innerText = "?";
                     oMine.className = "mine_up";
@@ -553,8 +553,8 @@ function MineButton(mine_value, mine_index) {
             return false;
         // left mouse button
         if (event.button === 0) {
-            // don't response to "expanded" and "marked" case
-            if (this.getAttribute("marked") === K_TRUE || this.getAttribute("expanded") === K_TRUE) {
+            // don't respond to "expanded" and "marked" case
+            if (this.getAttribute("marked") === "true" || this.getAttribute("expanded") === "true") {
                 return false;
             }
             this.setAttribute("pushed", true);
@@ -562,8 +562,6 @@ function MineButton(mine_value, mine_index) {
         }
         // right mouse button
         if (event.button === 2) {
-            // start timer
-            BeginTimer();
             markAsMine();
         }
     }
@@ -586,7 +584,7 @@ function MineButton(mine_value, mine_index) {
         if (is_end)
             return false;
 
-        if (this.getAttribute("pushed") === K_TRUE) {
+        if (this.getAttribute("pushed") === "true") {
             this.className = "mine_up";
             this.setAttribute("pushed", false);
         }
@@ -596,7 +594,7 @@ function MineButton(mine_value, mine_index) {
         if (is_end)
             return false;
 
-        if (this.getAttribute("pushed") === K_TRUE) {
+        if (this.getAttribute("pushed") === "true") {
             this.className = "mine_up";
             this.setAttribute("pushed", false);
         }
@@ -604,7 +602,6 @@ function MineButton(mine_value, mine_index) {
 
     return oMine;
 }
-
 
 function FunctionBar(mine_num)
 {
