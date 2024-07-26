@@ -14,32 +14,6 @@ var is_end = false;	//is game ended?
 var is_first_click = false; //is first block opened
 var oMainFrame;	//game main frame
 
-document.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
-
-    let touchDuration;
-    let touchTimeout;
-
-    box.addEventListener('touchstart', (e) => {
-        touchDuration = 0;
-        touchTimeout = setTimeout(() => {
-            box.classList.add('highlight');
-        }, 500); // 500ms för långtryck
-    });
-
-    box.addEventListener('touchend', (e) => {
-        clearTimeout(touchTimeout);
-        if (touchDuration < 500) {
-            box.classList.remove('highlight');
-        }
-    });
-
-    box.addEventListener('touchmove', (e) => {
-        clearTimeout(touchTimeout);
-        touchDuration += 100;
-    });
-});
-
 
 
 //initialize the mine area
