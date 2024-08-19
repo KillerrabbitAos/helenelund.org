@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="script.js">
-   <script type=text/javascript src="script.js"></script>
+<script type=text/javascript src="script.js"></script>
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
  
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,15 +14,15 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-KZT42Q867Q');
-</script>
+    gtag('config', 'G-KZT42Q867Q');
+  </script>
 </head>
 <div class="topnav">
 <ul>
@@ -28,131 +30,114 @@
   <li><a href="/">Home</a></li>
   <li><a href="contact.html">Contact</a></li>
   <li><a href="games.html">Spel</a></li>
-  
-  
 </ul>
 </div>
-<hr />
 
-  <br />
-  <h2><ins>Favoriter</ins></h2>
-  <h2></h2>
-  <div id="favorites">
-  
-  </div>
-  
-<script>
-   updateFavorites()
-</script>
-<button id="clear" type="button" onclick="clearFavorites(0); document.getElementById('favorites').innerHTML = ''">Rensa</button>
-<p></p>
+
 
 <hr>
 <h2>Helenelundsskolan scheman:</h2>
 
-
+<!--
   <h2><ins>Åk 1</ins></h2>
-  <p><a href="Pdf/Schema.pdf">1A Schema</a><button class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema.pdf', '1A');">Favorit</button></p>
-<p id="lesson1A"></p>
-<script>
-  document.getElementById("lesson1A").innerHTML = displayLesson("1A");
-</script>
+  <p><a href="Pdf/Schema.pdf">1A Schema</a></p>
+  <p id="lesson1A"></p>
+  <script>
+    document.getElementById("lesson1A").innerHTML = displayLesson("1A");
+  </script>
 
-
-  <p><a href="Pdf/Schema (1).pdf">1B Schema</a><button class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (1).pdf', '1B')">Favorit</button></p>
+  <p><a href="Pdf/Schema (1).pdf">1B Schema</a></p>
   <p id="lesson1B"></p>
   <script>
     document.getElementById("lesson1B").innerHTML = displayLesson("1B");
   </script>
 
-  <p><a href="Pdf/Schema (2).pdf">1C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (2).pdf', '1C')">Favorit</button></p>
+  <p><a href="Pdf/Schema (2).pdf">1C Schema</a></p>
   <p id="lesson1C"></p>
   <script>
     document.getElementById("lesson1C").innerHTML = displayLesson("1C");
   </script>
-  <p><a href="Pdf/Schema (3).pdf">1C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (3).pdf', '1D')">Favorit</button></p>
+
+  <p><a href="Pdf/Schema (3).pdf">1D Schema</a></p>
   <p id="lesson1D"></p>
-<script>
-  document.getElementById("lesson1D").innerHTML = displayLesson("1D");
-</script>
+  <script>
+    document.getElementById("lesson1D").innerHTML = displayLesson("1D");
+  </script>
   <hr />
 
   <h2><ins>Åk 2</ins></h2>
-  <p><a href="Pdf/Schema (4).pdf">2A Schema</a> <button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (5).pdf', '2A')">Favorit</button></p>
+  <p><a href="Pdf/Schema (4).pdf">2A Schema</a></p>
   <p id="lesson2A"></p>
   <script>
     document.getElementById("lesson2A").innerHTML = displayLesson("2A");
   </script>
 
-  <p><a href="Pdf/Schema (5).pdf">2B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (6).pdf', '2B')">Favorit</button></p>
+  <p><a href="Pdf/Schema (5).pdf">2B Schema</a></p>
   <p id="lesson2B"></p>
-  <p><a href="Pdf/Schema (6).pdf">2C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (7).pdf', '2C')">Favorit</button></p>
+  <p><a href="Pdf/Schema (6).pdf">2C Schema</a></p>
   <p id="lesson2C"></p>
-  <p><a href="Pdf/Schema (7).pdf">2D Schema</a>.</p>
+  <p><a href="Pdf/Schema (7).pdf">2D Schema</a></p>
 
   <hr />
 
   <h2><ins>Åk 3</ins></h2>
-  <p><a href="Pdf/Schema (8).pdf">3A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (8).pdf', '3A')">Favorit</button></p>
+  <p><a href="Pdf/Schema (8).pdf">3A Schema</a></p>
   <p id="lesson3A"></p>
-  <p><a href="Pdf/Schema (9).pdf">3B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (9).pdf', '3B')">Favorit</button></p>
+  <p><a href="Pdf/Schema (9).pdf">3B Schema</a></p>
   <p id="lesson3B"></p>
-  <p><a href="Pdf/Schema (10).pdf">3C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (10).pdf', '3C')">Favorit</button></p>
+  <p><a href="Pdf/Schema (10).pdf">3C Schema</a></p>
   <p id="lesson3C"></p>
   <p><del>3D Schema</del></p>
   
   <p id="lesson3D"></p>
-  <!-- om 3D kommer tillbaka: ta bort denna kommentar och lägg till detta: <p><a href="Pdf/Schema (11).pdf">3D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (11).pdf', '3D')">favorite</button</p>-->
-  <!--3D finns ej HT2023!!-->
+  om 3D kommer tillbaka: ta bort denna kommentar och lägg till detta: 
+  <p><a href="Pdf/Schema (11).pdf">3D Schema</a></p>
+  3D finns ej HT2023!!
   
   <hr />
 
   <h2><ins>Åk 4</ins></h2>
-  <p><a href="Pdf/Schema (12).pdf">4A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (12).pdf', '4A')">Favorit</button></p>
+  <p><a href="Pdf/Schema (12).pdf">4A Schema</a></p>
   <p id="lesson4A"></p>
-  <p><a href="Pdf/Schema (13).pdf">4B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (13).pdf', '4B')">Favorit</button></p>
-  <p><a href="Pdf/Schema (14).pdf">4C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (14).pdf', '4C')">Favorit</button></p>
-  <p><a href="Pdf/Schema (15).pdf">4D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (15).pdf', '4D')">Favorit</button></p>
+  <p><a href="Pdf/Schema (13).pdf">4B Schema</a></p>
+  <p><a href="Pdf/Schema (14).pdf">4C Schema</a></p>
+  <p><a href="Pdf/Schema (15).pdf">4D Schema</a></p>
   <hr />
 
   <h2><ins>Åk 5</ins></h2>
-  <p><a href="Pdf/Schema (16).pdf">5A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (16).pdf', '5A')">Favorit</button></p>
-  <p><a href="Pdf/Schema (17).pdf">5B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (17).pdf', '5B')">Favorit</button></p>
-  <p><a href="Pdf/Schema (18).pdf">5C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (18).pdf', '5C')">Favorit</button></p>
-  <p><a href="Pdf/Schema (19).pdf">5D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (19).pdf', '5D')">Favorit</button></p>
+  <p><a href="Pdf/Schema (16).pdf">5A Schema</a></p>
+  <p><a href="Pdf/Schema (17).pdf">5B Schema</a></p>
+  <p><a href="Pdf/Schema (18).pdf">5C Schema</a></p>
+  <p><a href="Pdf/Schema (19).pdf">5D Schema</a></p>
   <hr />
 
   <h2><ins>Åk 6</ins></h2>
-
-  <p><a href="Pdf/Schema (20).pdf">6A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (20).pdf', '6A')">Favorit</button></p>
-  <p><a href="Pdf/Schema (21).pdf">6B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (21).pdf', '6B')">Favorit</button></p>
-  <p><a href="Pdf/Schema (22).pdf">6C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (22).pdf', '6C')">Favorit</button></p>
-  <p><a href="Pdf/Schema (23).pdf">6D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (23).pdf', '6D')">Favorit</button></p>
+  <p><a href="Pdf/Schema (20).pdf">6A Schema</a></p>
+  <p><a href="Pdf/Schema (21).pdf">6B Schema</a></p>
+  <p><a href="Pdf/Schema (22).pdf">6C Schema</a></p>
+  <p><a href="Pdf/Schema (23).pdf">6D Schema</a></p>
   <hr />
 
   <h2><ins>Åk 7</ins></h2>
-
-  <p><a href="Pdf/Schema (24).pdf">7A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (24).pdf', '7A')">Favorit</button></p>
-  <p><a href="Pdf/Schema (25).pdf">7B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (25).pdf', '7B')">Favorit</button></p>
-  <p><a href="Pdf/Schema (26).pdf">7C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (26).pdf', '7C')">Favorit</button></p>
-  <p><a href="Pdf/Schema (27).pdf">7D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (27).pdf', '7D')">Favorit</button></p>
+  <p><a href="Pdf/Schema (24).pdf">7A Schema</a></p>
+  <p><a href="Pdf/Schema (25).pdf">7B Schema</a></p>
+  <p><a href="Pdf/Schema (26).pdf">7C Schema</a></p>
+  <p><a href="Pdf/Schema (27).pdf">7D Schema</a></p>
   <hr />
 
-  <h2><ins>Åk 8</ins></h2>
-
-  <p><a href="Pdf/Schema (28).pdf">8A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (28).pdf', '8A')">Favorit</button></p>
-  <p><a href="Pdf/Schema (29).pdf">8B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (29).pdf', '8B')">Favorit</button></p>
-  <p><a href="Pdf/Schema (30).pdf">8C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (30).pdf', '8C')">Favorit</button></p>
-  <p><a href="Pdf/Schema (31).pdf">8D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (31).pdf', '8D')">Favorit</button></p>
+<h2><ins>Åk 8</ins></h2>
+  <p><a href="Pdf/Schema (28).pdf">8A Schema</a></p>
+  <p><a href="Pdf/Schema (29).pdf">8B Schema</a></p>
+  <p><a href="Pdf/Schema (30).pdf">8C Schema</a></p>
+  <p><a href="Pdf/Schema (31).pdf">8D Schema</a></p>
   <hr />
+-->
 
   <h2><ins>Åk 9</ins></h2>
-
-  <p><a href="Pdf/Schema (32).pdf">9A Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (32).pdf', '9A')">Favorit</button></p>
-  <p><a href="Pdf/Schema (33).pdf">9B Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (33).pdf', '9B')">Favorit</button></p>
-  <p><a href="Pdf/Schema (34).pdf">9C Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (34).pdf', '9C')">Favorit</button></p>
-  <p><a href="Pdf/Schema (35).pdf">9D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (35).pdf', '9D')">Favorit</button></p>
+  <p><a href="Pdf/Schema (32).pdf">9A Schema</a></p>
+  <p><a href="Pdf/Schema (33).pdf">9B Schema</a></p>
+  <p><a href="Pdf/Schema (34).pdf">9C Schema</a></p>
+  <p><del>9D Schema</del> - Ej tillgänglig</p>
   <hr />
 
-
-</shema>
+</html>

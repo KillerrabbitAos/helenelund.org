@@ -19,6 +19,12 @@ font-family: "Changa", Times, serif;
   padding: 20px;
   font-size: 40px;
 }
+.disabled {
+
+  pointer-events: none;
+  cursor: default;
+
+}
 
 .active{
 background-color:green;
