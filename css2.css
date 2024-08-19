@@ -1,0 +1,30 @@
+html {
+    font-family: "Changa", Times, serif;
+}
+
+
+#headerBidra    {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.intro  {
+    text-align: center;
+}
+
+.instruktioner h2{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.instruktioner  ul{
+    background-color: rgb(225, 229, 232);
+    padding: 40px;
+
+}
+
+
+.instruktioner a{
+    color: black;
+
+}
