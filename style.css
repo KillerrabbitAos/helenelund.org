@@ -8,6 +8,12 @@ h2, h3 {
   padding: 20px;
   font-size: 40px;
 }
+.disabled {
+
+  pointer-events: none;
+  cursor: default;
+
+}
 
 .active {
   background-color: green;
@@ -25,6 +31,34 @@ h2, h3 {
   z-index: 1000;
 }
 
+#headerBidra    {
+  text-align: center;
+  margin-bottom: 70px;
+  font-family: 'Changa';
+}
+
+.intro  {
+  text-align: center;
+}
+
+.instruktioner h2{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.instruktioner  ol{
+  background-color: rgb(225, 229, 232);
+  padding: 40px;
+  font-family: 'Changa';
+
+}
+
+
+.instruktioner a{
+  color: black;
+
+}
+
 body {
   background-color: #FAFCF9;
   margin: 0;
@@ -40,7 +74,7 @@ a {
   border-radius: 25px;
 }
 
-ul {
+.topnav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -48,13 +82,13 @@ ul {
   width: 100%;
 }
 
-li {
+.topnav li {
   display: inline-block;
   float: left;
   width: 25%;
 }
 
-li a {
+.topnav li a {
   display: block;
   color: white;
   font-weight: bold;

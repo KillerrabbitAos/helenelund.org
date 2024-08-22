@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="script.js">
-   <script type=text/javascript src="script.js"></script>
+<script type=text/javascript src="script.js"></script>
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet">
  
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -12,40 +14,71 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-KZT42Q867Q');
-</script>
-
+    gtag('config', 'G-KZT42Q867Q');
+  </script>
 </head>
-
 <div class="topnav">
-  <ul>
-    <li class="active"><a href="schema.html">Scheman</a></li>
-    <li><a href="/">Hem</a></li>
-    <li><a href="contact.html">Kontakt</a></li>
-    <li><a href="games.html">Spel</a></li>
+<ul>
+  <li class="active"><a href="schema.html">Scheman</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="games.html">Spel</a></li>
+</ul>
+</div>
+
+    <h1 id="headerBidra">Bidra till Helenelund.org</h1>
+</head>
+<body>
+    <div class="intro">
+
+        <p>För att kunna se till att alla scheman hålls uppdaterade behöver vi <u>DIN</u> hjälp.</p>
+        <p>Skicka din klass schema till oss och få ditt <u>namn/signatur</u> på hemsidan!</p>
+        <u><p>Med dessa sex steg kan du hjälpa både dig själv och många andra Helenelund.org-användare.</p></u>
+
+
+    </div>
     
-    
-  </ul>
-  </div>
+
+
+    <div class="instruktioner">
+
+        <h2>Gör så här:</h2>
+        <ol>
+
+            <li>Öppna <a href="https://sollentuna.skola24.se/" target="_blank">sollentuna.skola24.se</a> på din dator, mobil eller surfplatta</li>
+            <li>Klicka på "Logga in med E-legitiamtion" och logga in med valfri metod<u>(BankID rekommenderas)</u></li>
+            <li>Öppna schemavisaren som finns på Skola24:s startsida</li>
+            <li>Klicka på texten "Visa mer" högt upp till höger och skriv sedan in vilken klass du går i. Var noga med att välja "Vecka" och inte bara en dags schema</li>
+            <li>Klicka på de tre prickarna ovanför "Visa mindre" och välj "skriv ut/spara som PDF". Klicka på knappen "Hämta PDF"</li>
+            <li>Slutligen skicka PDF:en till <a href="mailto: bidra@helenelund.org">bidra@helenelund.org</a> och skriv klassens namn i titeln. <u>För att få ditt namn med på hemsidan krävs också ett namn eller signatur.</u></li>
+            
+        </ol>
+
+
+    </div>
+
+    <h1 style="font-family: changa;">Tack!</h1>
+
 
 <hr>
 <h2>Helenelundsskolan scheman:</h2>
 
 
+
+<!--
   <h2><ins>Åk 1</ins></h2>
   <p><a href="Pdf/Schema.pdf">1A Schema</a></p>
-<p id="lesson1A"></p>
-<script>
-  document.getElementById("lesson1A").innerHTML = displayLesson("1A");
-</script>
-
+  <p id="lesson1A"></p>
+  <script>
+    document.getElementById("lesson1A").innerHTML = displayLesson("1A");
+  </script>
 
   <p><a href="Pdf/Schema (1).pdf">1B Schema</a></p>
   <p id="lesson1B"></p>
@@ -58,15 +91,16 @@
   <script>
     document.getElementById("lesson1C").innerHTML = displayLesson("1C");
   </script>
-  <p><a href="Pdf/Schema (3).pdf">1C Schema</a></p>
+
+  <p><a href="Pdf/Schema (3).pdf">1D Schema</a></p>
   <p id="lesson1D"></p>
-<script>
-  document.getElementById("lesson1D").innerHTML = displayLesson("1D");
-</script>
+  <script>
+    document.getElementById("lesson1D").innerHTML = displayLesson("1D");
+  </script>
   <hr />
 
   <h2><ins>Åk 2</ins></h2>
-  <p><a href="Pdf/Schema (4).pdf">2A Schema</a> </p>
+  <p><a href="Pdf/Schema (4).pdf">2A Schema</a></p>
   <p id="lesson2A"></p>
   <script>
     document.getElementById("lesson2A").innerHTML = displayLesson("2A");
@@ -76,7 +110,7 @@
   <p id="lesson2B"></p>
   <p><a href="Pdf/Schema (6).pdf">2C Schema</a></p>
   <p id="lesson2C"></p>
-  <p><a href="Pdf/Schema (7).pdf">2D Schema</a>.</p>
+  <p><a href="Pdf/Schema (7).pdf">2D Schema</a></p>
 
   <hr />
 
@@ -90,8 +124,9 @@
   <p><del>3D Schema</del></p>
   
   <p id="lesson3D"></p>
-  <!-- om 3D kommer tillbaka: ta bort denna kommentar och lägg till detta: <p><a href="Pdf/Schema (11).pdf">3D Schema</a><button id="1A" class="favoriteButton" type="button" onclick="toggleFavorite('Pdf/Schema (11).pdf', '3D')">favorite</button</p>-->
-  <!--3D finns ej HT2023!!-->
+  om 3D kommer tillbaka: ta bort denna kommentar och lägg till detta: 
+  <p><a href="Pdf/Schema (11).pdf">3D Schema</a></p>
+  3D finns ej HT2023!!
   
   <hr />
 
@@ -111,7 +146,6 @@
   <hr />
 
   <h2><ins>Åk 6</ins></h2>
-
   <p><a href="Pdf/Schema (20).pdf">6A Schema</a></p>
   <p><a href="Pdf/Schema (21).pdf">6B Schema</a></p>
   <p><a href="Pdf/Schema (22).pdf">6C Schema</a></p>
@@ -119,45 +153,22 @@
   <hr />
 
   <h2><ins>Åk 7</ins></h2>
-
   <p><a href="Pdf/Schema (24).pdf">7A Schema</a></p>
   <p><a href="Pdf/Schema (25).pdf">7B Schema</a></p>
   <p><a href="Pdf/Schema (26).pdf">7C Schema</a></p>
   <p><a href="Pdf/Schema (27).pdf">7D Schema</a></p>
   <hr />
 
-  <h2><ins>Åk 8</ins></h2>
-
+<h2><ins>Åk 8</ins></h2>
   <p><a href="Pdf/Schema (28).pdf">8A Schema</a></p>
-  <p><del>8B Schema</del> - Ej tillgänglig</p>
-
-  <p id="lesson3D"></p>
- 
+  <p><a href="Pdf/Schema (29).pdf">8B Schema</a></p>
   <p><a href="Pdf/Schema (30).pdf">8C Schema</a></p>
   <p><a href="Pdf/Schema (31).pdf">8D Schema</a></p>
   <hr />
-
-  <h2><ins>Åk 9</ins></h2>
-
-  <p><a href="Pdf/Schema (32).pdf">9A Schema</a></p>
-  <p><a href="Pdf/Schema (33).pdf">9B Schema</a></p>
-  <p><a href="Pdf/Schema (34).pdf">9C Schema</a></p>
-  <p><a href="Pdf/Schema (35).pdf">9D Schema</a></p>
-  <hr />
-
-
-</shema>
-<script>
-  window.onscroll = function() {myFunction()};
-  
-  var navbar = document.getElementsByClassName("topnav")[0];
-  var sticky = navbar.offsetTop;
-  
-  function myFunction() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-  </script>
+-->
+<h2><ins>Åk 9</ins></h2>
+<p><a href="Pdf/Schema (32).pdf">9A Schema</a></p>
+<p><a href="Pdf/Schema (33).pdf">9B Schema</a></p>
+<p><a href="Pdf/Schema (34).pdf">9C Schema</a></p>
+<p><del>9D Schema</del> - Ej tillgänglig</p>
+<hr />
