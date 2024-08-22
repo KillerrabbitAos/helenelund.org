@@ -37,6 +37,26 @@ h2, h3 {
   font-family: 'Changa';
 }
 
+.matDiv{
+  font-family: "Changa";
+  padding: 15px;
+}
+
+.vegetarisk {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.kott {
+  font-weight: bold;
+  padding: 5px; 
+  border-radius: 5px; 
+  display: inline-block; 
+}
+
+
 .intro  {
   text-align: center;
 }
