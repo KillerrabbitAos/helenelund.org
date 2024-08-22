@@ -148,3 +148,6 @@ a {
 .right-games {
   align-items: flex-end;
 }
+p{
+  font-family: "Changa", sans-serif;
+}
