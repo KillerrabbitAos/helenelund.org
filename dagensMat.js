@@ -1,6 +1,6 @@
 async function fetchMenu() {
     try {
-        const response = await fetch('http://79.72.19.53:3000/menu');
+        const response = await fetch('https://79.72.19.53:3000/menu');
         const data = await response.json();
         renderTodaysMenu(data);
     } catch (error) {
