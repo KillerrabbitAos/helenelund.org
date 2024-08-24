@@ -1,6 +1,6 @@
 async function fetchMenu() {
     try {
-        const response = await fetch('https://services.helenelund.org:443/menu');
+        const response = await fetch('https://services.helenelund.org/menu');
         const data = await response.json();
         renderTodaysMenu(data);
     } catch (error) {

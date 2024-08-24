@@ -19,6 +19,42 @@ h1 {
     color: #333;
 }
 
+.week-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.week-navigation button {
+    padding: 10px 15px;
+    margin: 0 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.week-navigation button:hover {
+    background-color: #555;
+}
+
+.weekLabel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.weekLabel span {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -33,20 +69,17 @@ li:last-child {
     border-bottom: none;
 }
 
-
-#back{
+#back {
     text-align: center;
-
 }
 
-#back a{
+#back a {
     color: black;
     text-decoration: none;
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
     background-color: rgb(250, 252, 249);
-    
 }
 
 .highlighted {
@@ -56,14 +89,12 @@ li:last-child {
     margin-bottom: 5px;
 }
 
-
-.clickhere{
-
+.clickhere {
     text-align: center;
     margin-top: 10px;
 }
 
-.datum{
+.datum {
     margin-bottom: 10px;
     display: inline-block;
 }
