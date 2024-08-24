@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Changa", sans-serif;
     background-color: rgb(250, 252, 249);
     margin: 0;
     padding: 0;
@@ -98,3 +98,10 @@ li:last-child {
     margin-bottom: 10px;
     display: inline-block;
 }
+<<<<<<< HEAD
+=======
+
+p{
+    font-family: "Changa"
+}
+>>>>>>> 8c188ddde1ba304809efdf8c04e48224994c2125
