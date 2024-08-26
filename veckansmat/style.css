@@ -37,6 +37,15 @@ h1 {
     width: 150px;
 }
 
+.current-day {
+    font-weight: bold;
+
+    background-color: rgb(187, 248, 187);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
 .week-navigation button:hover {
     background-color: #555;
 }

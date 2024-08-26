@@ -21,21 +21,22 @@ function renderMenu(weekIndex) {
     if (menuData && menuData.weeks && menuData.weeks.length > weekIndex) {
         const weekData = menuData.weeks[weekIndex];
         weekLabel.textContent = `Vecka ${weekData.number}`;
+        
+        const today = new Date().setHours(0, 0, 0, 0);
 
         if (weekData.days && weekData.days.length > 0) {
             weekData.days.forEach(day => {
-                if (day.items && day.items.length > 0) {
-                    const li = document.createElement('li');
-                    const date = new Date(day.date * 1000);
-                    const formattedDate = date.toLocaleDateString('sv-SE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                const li = document.createElement('li');
+                const date = new Date(day.date * 1000);
+                const formattedDate = date.toLocaleDateString('sv-SE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-                    li.innerHTML = `<strong><span class="datum">${formattedDate}:</span></strong><br>${day.items.join('<br>')}`;
-                    menuList.appendChild(li);
-                } else {
-                    const li = document.createElement('li');
-                    li.textContent = 'Ingen meny tillgänglig för denna dag.';
-                    menuList.appendChild(li);
+                li.innerHTML = `<strong><span class="datum">${formattedDate}:</span></strong><br>${day.items.join('<br>')}`;
+                
+                if (date.setHours(0, 0, 0, 0) === today) {
+                    li.classList.add('current-day');
                 }
+                
+                menuList.appendChild(li);
             });
         } else {
             menuList.innerHTML = '<li>Ingen meny tillgänglig för denna vecka.</li>';
@@ -45,6 +46,7 @@ function renderMenu(weekIndex) {
         weekLabel.textContent = 'Vecka -';
     }
 }
+
 
 document.getElementById('prev-week-btn').addEventListener('click', () => {
     if (currentWeekIndex > 0) {
