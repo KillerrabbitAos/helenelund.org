@@ -21,7 +21,7 @@ function renderMenu(weekIndex) {
     if (menuData && menuData.weeks && menuData.weeks.length > weekIndex) {
         const weekData = menuData.weeks[weekIndex];
         weekLabel.textContent = `Vecka ${weekData.number}`;
-        
+
         const today = new Date().setHours(0, 0, 0, 0);
 
         if (weekData.days && weekData.days.length > 0) {
@@ -30,12 +30,16 @@ function renderMenu(weekIndex) {
                 const date = new Date(day.date * 1000);
                 const formattedDate = date.toLocaleDateString('sv-SE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-                li.innerHTML = `<strong><span class="datum">${formattedDate}:</span></strong><br>${day.items.join('<br>')}`;
-                
+                if (day.items && day.items.length > 0) {
+                    li.innerHTML = `<strong><span class="datum">${formattedDate}:</span></strong><br>${day.items.join('<br>')}`;
+                } else {
+                    li.innerHTML = `<strong><span class="datum">${formattedDate}:</span></strong><br>Ingen meny tillgänglig för denna dag.`;
+                }
+
                 if (date.setHours(0, 0, 0, 0) === today) {
                     li.classList.add('current-day');
                 }
-                
+
                 menuList.appendChild(li);
             });
         } else {
