@@ -6,7 +6,7 @@ function getRandomInt(min, max) {
   }
   
   function generateSequence() {
-    const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+    const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'B'];
   
     while (sequence.length) {
       const rand = getRandomInt(0, sequence.length - 1);
@@ -129,6 +129,12 @@ function getRandomInt(min, max) {
       [1, 1, 1],
       [0, 0, 0]
     ],
+    'B': [
+      [0, 1, 0, 0],
+      [0, 1, 0, 0],
+      [0, 1, 0, 0],
+      [1, 1, 1, 0]
+    ],
     'L': [
       [0, 0, 1],
       [1, 1, 1],
@@ -161,8 +167,9 @@ function getRandomInt(min, max) {
     'T': 'purple',
     'S': 'green',
     'Z': 'red',
-    'J': 'blue',
-    'L': 'orange'
+    'J': 'pink',
+    'L': 'orange',
+    'B': 'blue'
   };
   
   let count = 0;
