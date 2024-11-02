@@ -1,29 +1,12 @@
 <!DOCTYPE html>
-<link rel="icon" href="Icon.jpeg" />
-<link rel="stylesheet" href="style.css" />
-<script src="script.js"></script>
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap"
-  rel="stylesheet"
-/>
-
+<html lang="ar">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KZT42Q867Q');
-</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helenelund.org</title>
+  
+  <!-- الأيقونة والصور الرمزية -->
+  <link rel="icon" href="Icon.jpeg" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -31,74 +14,82 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-  <!-- TrustBox script -->
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-<!-- End TrustBox script -->
-  <div class="header">
-    <h2 id="head">Helenelund.org</h2>
-  </div>
-  <div class="subheader">
-    <image id="contactGif">
-      <img
-        id="clickhere"
-        src="clickhere.gif"
-        width="50%"
-      />
-    </image>
-  </div>
+
+  <!-- الخطوط -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@500;600&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZT42Q867Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KZT42Q867Q');
+  </script>
+
+  <!-- TrustBox -->
+  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 </head>
-<div class="topnav">
-  <ul>
-    <li><a href="schema.html">Scheman</a></li>
-    <li><a class="active" href="/">Hem</a></li>
-    <li><a href="contact.html">Kontakt</a></li>
-    <!--<li><a href="Gamess.html">Spel</a></li>-->
-    <li><a href="games.html">Spel</a></li>
-  </ul>
-</div>
 
-<shema>
+<body>
+  <header>
+    <div class="header">
+      <h2 id="head">Helenelund.org</h2>
+    </div>
+    <div class="subheader">
+      <img id="clickhere" src="clickhere.gif" width="50%" />
+    </div>
+  </header>
 
-  <div class="matDiv">
+  <nav class="topnav">
+    <ul>
+      <li><a href="schema.html">الجدول</a></li>
+      <li><a class="active" href="/">الصفحة الرئيسية</a></li>
+      <li><a href="contact.html">اتصل بنا</a></li>
+      <li><a href="games.html">ألعاب</a></li>
+    </ul>
+  </nav>
 
-    
-  <h2>Dagens mat</h2>
-  <div id="mat"></div>
-
-
-  <a href="/veckansmat/" style="padding-top: 10px;">Se hela veckans mat?</a>
-  </div>
-
-   <hr/>
-
-
-  <h1>
-    <h2>Insändare:</h2>
-
-    <p>"Helenelund.org är goated."</p>
-
-    <p></p>
-
-    <p><u><b>Av: </b>"Etm"</u></p>
+  <main>
+    <section class="matDiv">
+      <h2>وجبة اليوم</h2>
+      <div id="mat"></div>
+      <a href="/veckansmat/" style="padding-top: 10px;">عرض وجبات الأسبوع بالكامل؟</a>
+    </section>
 
     <hr/>
 
-    <h3>Tips:</h3>
-    <p>Skicka gärna inständare till <a href="mailto:bidra@helenelund.org?subject=Ins%C3%A4ndare&body=Namn%2FSmeknamn(Kommer%20synas%20p%C3%A5%20f%C3%B6rstasidan)%3A%20%0D%0A%0D%0ADin%20ins%C3%A4ndare%3A%0D%0A">bidra@helenelund.org</a> för att få din röst hörd på startsidan!</p>
-    <p>Du kan nu se dagens lunch!</p>
+    <section>
+      <h2>آراء:</h2>
+      <p>"موقع Helenelund.org مذهل."</p>
+      <p><u><b>بواسطة: </b>"Etm"</u></p>
+    </section>
 
-    <hr>
+    <hr/>
 
-    <body>
-      
-      <h3 id="KRA">By the killerabbit team</h3>
-      <!-- TrustBox widget - Review Collector -->
-<div class="trustpilot-widget" data-locale="sv-SE" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="64be4c34f0e432908cdebe61" data-style-height="52px" data-style-width="100%">
-  <a id="TPW" href="https://se.trustpilot.com/review/helenelund.org" target="_blank" rel="noopener">Trustpilot</a>
-</div>
-<!-- End TrustBox widget -->
+    <section>
+      <h3>نصيحة:</h3>
+      <p>يرجى إرسال آرائكم إلى <a href="mailto:bidra@helenelund.org?subject=آراء&body=الاسم%20%2F%20اللقب%3A%20%0D%0A%0D%0Aرأيك%3A%0D%0A">bidra@helenelund.org</a> ليتم نشرها على الصفحة الرئيسية!</p>
+      <p>يمكنك الآن رؤية وجبة الغداء لهذا اليوم!</p>
+    </section>
 
-<script src="dagensMat.js"></script>
-    </body>
-  </h1>
-</shema>
+    <hr/>
+
+    <section>
+      <h3 id="KRA">فريق Killerabbit</h3>
+      <!-- TrustBox widget -->
+      <div class="trustpilot-widget" data-locale="ar" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="64be4c34f0e432908cdebe61" data-style-height="52px" data-style-width="100%">
+        <a id="TPW" href="https://se.trustpilot.com/review/helenelund.org" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+      <!-- End TrustBox widget -->
+    </section>
+  </main>
+
+  <script src="dagensMat.js"></script>
+</body>
+</html>
